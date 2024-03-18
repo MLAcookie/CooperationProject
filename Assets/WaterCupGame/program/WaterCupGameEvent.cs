@@ -37,9 +37,4 @@ public class WaterCupGameEvent : MonoBehaviour
         }
     }
 
-
-    void Update()
-    {
-        
-    }
 }

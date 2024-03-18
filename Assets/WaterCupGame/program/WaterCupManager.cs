@@ -39,9 +39,13 @@ public class WaterCupManager : MonoBehaviour
         {
             cupPos.Add(Instantiate(WaterCupPre));
             cupPos[i].transform.position = initialPos[i];
+
+
             cupPos[i].GetComponent<WaterCup>().maxReserves = maxReservesS[i];
             cupPos[i].GetComponent<WaterCup>().reserves = reservesS[i];
             //脑子不转了，先随便写个存储数据的用来测试一下
+
+
             reservesPos.Add(Instantiate(reservesPre));
             reservesPos[i].gameObject.GetComponent<ReservesCount>().WaterCupInfo = cupPos[i].GetComponent<WaterCup>();
             reservesPos[i].gameObject.GetComponent<ReservesCount>().resrvesPos = cupPos[i].transform.GetChild(0).gameObject;
