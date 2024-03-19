@@ -7,9 +7,6 @@ public class CutCircleControl : MonoBehaviour
     public GameObject graph;
 
 
-    private float CD = 0;
-    private float maxCD = 1;
-
     private int dl = 1;
 
 
@@ -31,10 +28,10 @@ public class CutCircleControl : MonoBehaviour
             //Debug.Log(acc);
             if (inRotEnd == false)
             {
-                acc += Time.deltaTime * 1f;
+                acc -= Time.deltaTime * 1f;
                 rightRot += acc;
                 graph.transform.eulerAngles = new Vector3(0, 0, rightRot);
-                if(acc > 8f)
+                if(acc < -8f)
                 {
                     dlNext();
                     inRotEnd = true;
@@ -42,10 +39,10 @@ public class CutCircleControl : MonoBehaviour
             }
             else
             {
-                acc -= Time.deltaTime * 2f;
+                acc += Time.deltaTime * 2f;
                 rightRot += acc;
                 graph.transform.eulerAngles = new Vector3(0, 0, rightRot);
-                if (acc <= 0f)
+                if (acc >= 0f)
                 {   
                     inRot = false;
                     inRotEnd = false;

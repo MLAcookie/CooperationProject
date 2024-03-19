@@ -53,11 +53,6 @@ public class WaterCup : MonoBehaviour
         rigid.velocity = Vector2.zero;
     }
 
-    //private void OnMouseUpAsButton()
-    //{
-
-    //}
-
     private void OnMouseUp()
     {
         inBack = true;
