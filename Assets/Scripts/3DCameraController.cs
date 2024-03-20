@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class Camera3DController : MonoBehaviour
 {
+    //将该脚本挂载到一个空物体上，将相机拖到该空物体下作为子物体并将Transform重置为0
+
     [Header("主相机")]
-    public Transform maincamera;
+    public Transform maincamera;//作为子物体的相机
 
     [Header("目标")]
-    public Transform target;//目标
+    public Transform target;//拍摄目标
     public float direction = 10.0f;//距离
     public float mindirection = 5.0f;//最小距离
     public float maxdirection = 20.0f;//最大距离
@@ -79,7 +81,8 @@ public class CameraController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            CameShake();
+            //勿用震动，正在修改
+            //CameShake();
         }
     }
 
