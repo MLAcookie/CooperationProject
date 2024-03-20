@@ -64,6 +64,7 @@ public class GameArchive
             sr.Close();
         }
     }
+
     //删除Json文件
     public static void DeleteJson(string filePath)
     {
@@ -81,6 +82,7 @@ public class GameArchive
 
     //保存进度
     //可根据存档槽位不同存入不同fileName
+    /*
     public static void SavePlayModel(PlaySave model, string fileName)
     {
         SaveJson(model, playDataPath, fileName);
@@ -124,4 +126,5 @@ public class GameArchive
     {
         GameSetting.SetSettingModel(LoadJson<SettingSave>(settingDataPath + "/Setting.json"));
     }
+    */
 }
