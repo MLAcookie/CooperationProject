@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Button
+  - WaterCup
+  - Field
   layers:
   - Default
   - TransparentFX
@@ -41,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: notOnChoose
+    uniqueID: 629740439
+    locked: 0
+  - name: onChoose
+    uniqueID: 1876491271
+    locked: 0
+  - name: UI
+    uniqueID: 3505301941
     locked: 0
