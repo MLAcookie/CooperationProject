@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\UI\SettingPanel.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\GameArchive.cs" />
+    <Compile Include="Assets\Scripts\UI\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\UI\StartScene.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
@@ -96,6 +97,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\StreamingAssets\01.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>

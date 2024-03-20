@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class SettingPanel : MonoBehaviour
 {
+    public static SettingPanel instance;
     public Slider global;
     public Slider audio;
     public Slider bgm;
     public Slider voice;
     void Start()
     {
+        instance = this;
         Init();
     }
 
