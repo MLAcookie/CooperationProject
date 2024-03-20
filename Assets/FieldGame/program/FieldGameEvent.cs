@@ -17,6 +17,14 @@ public class FieldGameEvent : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public event Action onCut;
+    public void Cutting()
+    {
+        if (onCut != null)
+        {
+            onCut();
+        }
+    }
 
     public event Action onGameFinish;
     public void gameFinish()

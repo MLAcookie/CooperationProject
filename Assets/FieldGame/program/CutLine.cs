@@ -63,26 +63,8 @@ public class CutLine : MonoBehaviour
                 line.positionCount = 0;
                 isDraw = false;
 
+                FieldGameEvent.instance.Cutting();
 
-                RaycastHit2D[] hits = Physics2D.RaycastAll(startPoint, endPoint - startPoint, (endPoint - startPoint).magnitude);
-
-                foreach (RaycastHit2D hit in hits)
-                {
-                    if(hit.collider != null && hit.collider.tag == "Field")
-                    {
-                        cutObjects.Add(hit.transform.gameObject);
-                    }
-                    // 处理相交的物体
-                    Debug.Log("Hit object: " + hit.collider.gameObject.name);
-                }
-                if(cutObjects.Count == 2)
-                {
-                    Vector3 direction = (cutObjects[0].transform.position - cutObjects[1].transform.position).normalized;
-
-                    // 分别移动两个物体
-                    cutObjects[0].transform.position += direction * moveDistance;
-                    cutObjects[1].transform.position -= direction * moveDistance;
-                }
                 cutObjects.Clear();
 
             }
