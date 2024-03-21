@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 43211495}
   - component: {fileID: 43211494}
   - component: {fileID: 43211497}
+  - component: {fileID: 43211498}
+  - component: {fileID: 43211499}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -229,6 +231,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Map: {fileID: 2020688765}
+--- !u!114 &43211498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43211493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298b9be665636a449beb35779722bf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Map: {fileID: 2020688765}
+--- !u!114 &43211499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43211493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbed27ce7a4f1aa4985c55972624d82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Index: 0
+  PositionList:
+  - {x: -6, y: -2}
+  - {x: 4, y: 2}
 --- !u!1 &2020688765
 GameObject:
   m_ObjectHideFlags: 0

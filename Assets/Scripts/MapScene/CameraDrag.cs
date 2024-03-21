@@ -40,6 +40,7 @@ public class CameraDrag : MonoBehaviour
 
         from = new Vector2(mapTransform.position.x - offset.x, mapTransform.position.y - offset.y);
         to = new Vector2(mapTransform.position.x + offset.x, mapTransform.position.y + offset.y);
+
     }
 
     private void OnGUI()
