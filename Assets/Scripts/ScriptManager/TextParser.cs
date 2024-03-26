@@ -35,13 +35,13 @@ public class TextParser : MonoBehaviour
             return;
         }
         TempScript = TextLines[index].Split('|');
-        // *| ×¢ÊÍÖ¸Áî
+        // *| æ³¨é‡ŠæŒ‡ä»¤
         if (TempScript[0] == "*")
         {
             LineIndex++;
             ParsingText(LineIndex);
         }
-        // C| ÃüÁîÖ¸Áî
+        // C| å‘½ä»¤æŒ‡ä»¤
         else if (TempScript[0] == "C")
         {
             if (TempScript[1] == "setbg")
@@ -54,7 +54,7 @@ public class TextParser : MonoBehaviour
             {
                 {
                     if (TempScript[2] != "null")
-                    {                                              //½ÇÉ«Ãû          //Á¢»æÃû           //Î»ÖÃ
+                    {                                              //è§’è‰²å          //ç«‹ç»˜å           //ä½ç½®
                         Debug.Log("setfg");
                         DialogBoxManager.instance.LoadCharacter(TempScript[3] + "/" + TempScript[4] ,TempScript[2]);
                         DialogBoxManager.instance.CharacterDisplay(TempScript[2], "on");

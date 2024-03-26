@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\2DCameraController.cs" />
     <Compile Include="Assets\CutCircleGame\program\CutCircleGameEvent.cs" />
-    <Compile Include="Assets\Scripts\MapScene\CameraMargin.cs" />
     <Compile Include="Assets\CutCircleGame\program\CutCircleControl.cs" />
     <Compile Include="Assets\FieldGame\program\FieldBody.cs" />
     <Compile Include="Assets\CutCircleGame\program\Resourses.cs" />
@@ -89,7 +88,6 @@
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\WaterCupGame\program\ReservesCount.cs" />
     <Compile Include="Assets\CutCircleGame\program\NumText.cs" />
-    <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\DialogBoxManager.cs" />
   </ItemGroup>
   <ItemGroup>
