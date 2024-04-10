@@ -18,11 +18,20 @@ public class WaterCup : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spr;
 
+    public Sprite k1;
+    public Sprite k2;
+    public Sprite k3;
+    public Sprite k4;
+
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         originPos = gameObject.transform.position;
+
+
+        WaterCupGameEvent.instance.onFinishPouring += refresh;
+        refresh();
     }
 
     void Update()
@@ -110,5 +119,24 @@ public class WaterCup : MonoBehaviour
         reserves = 0;
     }
 
+    public void refresh()
+    {
+        if (reserves == 0)
+        {
+            spr.sprite = k1;
+        }
+        else if(reserves <= maxReserves/2)
+        {
+            spr.sprite = k2;
+        }
+        else if (reserves < maxReserves)
+        {
+            spr.sprite = k3;
+        }
+        else if (reserves == maxReserves)
+        {
+            spr.sprite = k4;
+        }
+    }
 
 }
