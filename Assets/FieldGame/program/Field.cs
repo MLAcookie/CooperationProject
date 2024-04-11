@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Field : MonoBehaviour
@@ -7,19 +8,32 @@ public class Field : MonoBehaviour
     private Vector2 mousePos;
     private Vector2 distance;
 
-    public GameObject endPos;
+    public List<GameObject> endPos = new List<GameObject>();
     //另一个拼图的组装节点
-    private Vector2 otherPartPos;
+    private List<Vector2> otherPartPos = new List<Vector2>();
+
+
+    public int id;
+    public int goal;
+    public int level;
+
+
+
 
     private float adsorbDistance = 0.4f;
 
     Rigidbody2D rigid;
     SpriteRenderer spr;
 
+
+    public List<int> neID;
+
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
+
+        FieldGameEvent.instance.onReturnPoint += SetPoint;
 
     }
 
@@ -28,38 +42,101 @@ public class Field : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //实时获取最终节点的位置
 
-        otherPartPos = endPos.transform.position;
-        //开摆！直接获取另一个拼图块的位置
+        if (neID.Count != 0)
+        {
+            for (int i = 0; i < neID.Count; i++)
+            {
+                FieldGameEvent.instance.findingPoint(neID[i]);
+            }
+        }
+        //寻找节点
+
+        if (endPos.Count != 0)
+        {
+            for (int i = 0; i < endPos.Count; i++)
+            {
+                otherPartPos[i] = endPos[i].transform.position;
+            }
+        }
+        //获取坐标
 
     }
+
+
+
+    void SetPoint(int _id, GameObject point)
+    {
+        if(neID.Count != 0)
+        {
+            for (int i = 0; i < neID.Count; i++)
+            {
+                if (neID[i] == _id)
+                {
+                    endPos.Add(point);
+                    otherPartPos.Add(endPos[i].transform.position);
+                    neID.Remove(_id);
+                }
+            }
+        }
+    }
+
+
 
     private void OnMouseDown()
     {
         distance = new Vector2(transform.position.x, transform.position.y) - mousePos;
+        if (id != -1)
+        {
+            FieldGameEvent.instance.FieldAction(level, goal, false);
+        }
         spr.sortingLayerName = "onChoose";
     }
 
     private void OnMouseDrag()
     {
-        if (Vector2.Distance(mousePos + distance, otherPartPos) <= adsorbDistance)
+        if(endPos.Count == 0)
         {
-            transform.position = otherPartPos;
+            transform.position = mousePos + distance;
+            rigid.velocity = Vector2.zero;
+            if (Input.GetMouseButtonDown(1))
+            {
+                transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 90);
+            }
         }
         else
         {
-            transform.position = mousePos + distance;
+            for (int i = 0; i < endPos.Count; i++)
+            {
+                if (Vector2.Distance(mousePos + distance, otherPartPos[i]) <= adsorbDistance)
+                {
+                    transform.position = otherPartPos[i];
+                }
+                else
+                {
+                    transform.position = mousePos + distance;
+                }
+                rigid.velocity = Vector2.zero;
+                if (Input.GetMouseButtonDown(1))
+                {
+                    transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + 90);
+                }
+            }
         }
-        rigid.velocity = Vector2.zero;
     }
 
     private void OnMouseUp()
     {
-        if (Vector2.Distance(transform.position, otherPartPos) <= adsorbDistance)
+        if (id != -1)
         {
-            transform.position = otherPartPos;
-            FieldGameEvent.instance.gameFinish();
-            Debug.Log("end");
+            for (int i = 0; i < endPos.Count; i++)
+            {
+                if (Vector2.Distance(transform.position, otherPartPos[i]) <= adsorbDistance)
+                {
+                    transform.position = otherPartPos[i];
+                    FieldGameEvent.instance.FieldAction(level, goal, true);
+                }
+                spr.sortingLayerName = "notOnChoose";
+            }
         }
-        spr.sortingLayerName = "notOnChoose";
     }
 }
