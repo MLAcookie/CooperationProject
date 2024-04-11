@@ -60,8 +60,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MapScene\ButtonClicShowUI.cs" />
+    <Compile Include="Assets\Scripts\DialogScene\DialogJsonObject.cs" />
     <Compile Include="Assets\Scripts\2DCameraController.cs" />
     <Compile Include="Assets\CutCircleGame\program\CutCircleGameEvent.cs" />
+    <Compile Include="Assets\Scripts\DialogScene\DialogSettingPipeline.cs" />
     <Compile Include="Assets\CutCircleGame\program\CutCircleControl.cs" />
     <Compile Include="Assets\FieldGame\program\FieldBody.cs" />
     <Compile Include="Assets\CutCircleGame\program\Resourses.cs" />
@@ -77,7 +80,9 @@
     <Compile Include="Assets\Scripts\UI\SettingPanel.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MapScene\CameraDrag.cs" />
+    <Compile Include="Assets\Scripts\MapScene\ButonClickTest.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\GameArchive.cs" />
+    <Compile Include="Assets\Scripts\MapScene\ButtonClickJumpToScene.cs" />
     <Compile Include="Assets\FieldGame\program\FieldGameEvent.cs" />
     <Compile Include="Assets\FieldGame\program\Field.cs" />
     <Compile Include="Assets\Scripts\UI\NewBehaviourScript.cs" />
