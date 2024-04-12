@@ -12,7 +12,10 @@ public class WaterCup : MonoBehaviour
     private bool endPour = true;
     public int maxReserves = 0;
     public int reserves = 0;
-    
+
+    public int level = 0;
+    public int ID = 0;
+    public int goalReserves = 0;
 
 
     Rigidbody2D rigid;
@@ -121,6 +124,18 @@ public class WaterCup : MonoBehaviour
 
     public void refresh()
     {
+        if (ID != -1)
+        {
+            Debug.Log(level + "  " + ID);
+            if (reserves == goalReserves)
+            {
+                WaterCupGameEvent.instance.CupAction(level, ID, true);
+            }
+            else
+            {
+                WaterCupGameEvent.instance.CupAction(level, ID, false);
+            }
+        }
         if (reserves == 0)
         {
             spr.sprite = k1;
