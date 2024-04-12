@@ -6,10 +6,10 @@ public class GlobalVariables : MonoBehaviour
 {
     public static GlobalVariables instance;
 
-    public float globalVolume = 1.0f;//鍏ㄥ眬闊抽噺
-    public float audioVolume = 1.0f;//闊虫晥闊抽噺
-    public float BGMVolume = 1.0f;//BGM闊抽噺
-    public float voiceVolume = 1.0f;//璇煶闊抽噺
+    public float globalVolume = 1.0f;//全局音量
+    public float audioVolume = 1.0f;//音效音量
+    public float BGMVolume = 1.0f;//BGM音量
+    public float voiceVolume = 1.0f;//语音音量
     public bool volumeChanged = false;
     void Awake()
     {

@@ -38,17 +38,17 @@ public class WaterCupManager : MonoBehaviour
             initialPos.Add(gameObject.transform.GetChild(i).transform.position);
         }
 
-        WaterCupGameEvent.instance.onGameStart += levelStart;
-        WaterCupGameEvent.instance.onCupAction += setGoal;
-        WaterCupGameEvent.instance.onGameFinish += levelEnd;
-        WaterCupGameEvent.instance.onLevelClear += Clear;
-        WaterCupGameEvent.instance.onTextInitial += addToCanvas;
 
     }
 
     private void Start()
     {
-        if(Canvas == null)
+        WaterCupGameEvent.instance.onGameStart += levelStart;
+        WaterCupGameEvent.instance.onCupAction += setGoal;
+        WaterCupGameEvent.instance.onGameFinish += levelEnd;
+        WaterCupGameEvent.instance.onLevelClear += Clear;
+        WaterCupGameEvent.instance.onTextInitial += addToCanvas;
+        if (Canvas == null)
         {
             var search = GameObject.Find("Canvas");
             if (search != null)

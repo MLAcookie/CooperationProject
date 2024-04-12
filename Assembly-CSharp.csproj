@@ -63,7 +63,9 @@
     <Compile Include="Assets\Scripts\MapScene\ButtonClicShowUI.cs" />
     <Compile Include="Assets\Scripts\DialogScene\DialogJsonObject.cs" />
     <Compile Include="Assets\Scripts\2DCameraController.cs" />
+    <Compile Include="Assets\Scripts\MapCamera.cs" />
     <Compile Include="Assets\CutCircleGame\program\CutCircleGameEvent.cs" />
+    <Compile Include="Assets\FieldGame\program\point.cs" />
     <Compile Include="Assets\Scripts\DialogScene\DialogSettingPipeline.cs" />
     <Compile Include="Assets\CutCircleGame\program\CutCircleControl.cs" />
     <Compile Include="Assets\FieldGame\program\FieldBody.cs" />
@@ -74,26 +76,34 @@
     <Compile Include="Assets\Scripts\ScriptManager\GlobalVariables.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\FileHandler.cs" />
     <Compile Include="Assets\Scripts\3DCameraController.cs" />
+    <Compile Include="Assets\FieldGame\program\FieldTestTrigger.cs" />
     <Compile Include="Assets\WaterCupGame\program\WaterCup.cs" />
     <Compile Include="Assets\Scripts\MapScene\PreCameraPosition.cs" />
+    <Compile Include="Assets\FieldGame\program\FieldLevelManager.cs" />
     <Compile Include="Assets\Scripts\UI\BackButton.cs" />
     <Compile Include="Assets\Scripts\UI\SettingPanel.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\AudioManager.cs" />
+    <Compile Include="Assets\FieldGame\program\pen.cs" />
+    <Compile Include="Assets\WaterCupGame\program\CupTestTrigger.cs" />
     <Compile Include="Assets\Scripts\MapScene\CameraDrag.cs" />
+    <Compile Include="Assets\Scripts\UI\NextButton.cs" />
+    <Compile Include="Assets\CutCircleGame\program\CGroup.cs" />
     <Compile Include="Assets\Scripts\MapScene\ButonClickTest.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\GameArchive.cs" />
     <Compile Include="Assets\Scripts\MapScene\ButtonClickJumpToScene.cs" />
     <Compile Include="Assets\FieldGame\program\FieldGameEvent.cs" />
     <Compile Include="Assets\FieldGame\program\Field.cs" />
-    <Compile Include="Assets\Scripts\UI\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\UI\StartScene.cs" />
     <Compile Include="Assets\FieldGame\program\CutLine.cs" />
     <Compile Include="Assets\CutCircleGame\program\Graphic.cs" />
     <Compile Include="Assets\WaterCupGame\program\WaterCupGameEvent.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\OnObjectClicked.cs" />
     <Compile Include="Assets\WaterCupGame\program\ReservesCount.cs" />
     <Compile Include="Assets\CutCircleGame\program\NumText.cs" />
+    <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\DialogBoxManager.cs" />
+    <Compile Include="Assets\CutCircleGame\program\CircleTestTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

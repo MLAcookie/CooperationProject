@@ -1,6 +1,10 @@
 ﻿C|setbgm
-C|setfg|left|marisa|15
+C|add|left|marisa|02
 S|Marisa|这是一句话用来测试，字字字字字字字字字字字字字字字字字字字字字字字字字字字字字字换行测试换行测试换行测试
-C|setfg|left|marisa|02
-C|setfg|right|reimu|Normal
-S|灵梦|添加立绘测试
+继续说话脚本测试
+C|setfg|left|05
+切换立绘测试
+C|openswitch
+C|add|right|reimu|Normal
+S|reimu|添加立绘测试
+角色灰暗度切换测试

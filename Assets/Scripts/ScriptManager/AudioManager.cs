@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // éŸ³æ•ˆæœ€å¤§æ•°é‡
+    // ÒôĞ§×î´óÊıÁ¿
     private const int AUDIO_CHANNEL_NUM = 6;
-    // è§’è‰²è¯­éŸ³æœ€å¤§æ•°é‡
+    // ½ÇÉ«ÓïÒô×î´óÊıÁ¿
     private const int Voice_CHANNEL_NUM = 2;
 
     public AudioClip testbgm;
@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
     private struct CHANNEL
     {
         public AudioSource channel;
-        public float keyOnTime; //è®°å½•æœ€è¿‘ä¸€æ¬¡æ’­æ”¾çš„æ—¶åˆ»
+        public float keyOnTime; //¼ÇÂ¼×î½üÒ»´Î²¥·ÅµÄÊ±¿Ì
     };
 
     private CHANNEL[] a_channels;
@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
 
         for (int i = 0; i < AUDIO_CHANNEL_NUM; i++)
         {
-            //æ¯ä¸ªé¢‘é“å¯¹åº”ä¸€ä¸ªéŸ³æº
+            //Ã¿¸öÆµµÀ¶ÔÓ¦Ò»¸öÒôÔ´
             a_channels[i].channel = gameObject.AddComponent<AudioSource>();
             a_channels[i].keyOnTime = 0;
         }
@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
         for (int i = 0; i < Voice_CHANNEL_NUM; i++)
         {
-            //æ¯ä¸ªé¢‘é“å¯¹åº”ä¸€ä¸ªéŸ³æº
+            //Ã¿¸öÆµµÀ¶ÔÓ¦Ò»¸öÒôÔ´
             v_channels[i].channel = gameObject.AddComponent<AudioSource>();
             v_channels[i].keyOnTime = 0;
         }
@@ -59,21 +59,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    //æ’­æ”¾ä¸€æ¬¡ï¼Œå‚æ•°ä¸ºéŸ³é¢‘ç‰‡æ®µã€å·¦å³å£°é“ã€é€Ÿåº¦
-    //ç”¨äºéŸ³æ•ˆ
-    //è€ƒè™‘äº†éŸ³æ•ˆé¡¶æ›¿çš„é€»è¾‘
+    //²¥·ÅÒ»´Î£¬²ÎÊıÎªÒôÆµÆ¬¶Î¡¢×óÓÒÉùµÀ¡¢ËÙ¶È
+    //ÓÃÓÚÒôĞ§
+    //¿¼ÂÇÁËÒôĞ§¶¥ÌæµÄÂß¼­
     public int PlayOneShot(AudioClip clip, float pan, float pitch = 1.0f)
     {
         for (int i = 0; i < a_channels.Length; i++)
         {
-            //å¦‚æœæ­£åœ¨æ’­æ”¾åŒä¸€ä¸ªç‰‡æ®µï¼Œè€Œä¸”åˆšåˆšæ‰å¼€å§‹ï¼Œåˆ™ç›´æ¥é€€å‡ºå‡½æ•°
+            //Èç¹ûÕıÔÚ²¥·ÅÍ¬Ò»¸öÆ¬¶Î£¬¶øÇÒ¸Õ¸Õ²Å¿ªÊ¼£¬ÔòÖ±½ÓÍË³öº¯Êı
             if (a_channels[i].channel.isPlaying &&
                  a_channels[i].channel.clip == clip &&
                  a_channels[i].keyOnTime >= Time.time - 0.03f)
                 return -1;
         }
-        //éå†æ‰€æœ‰é¢‘é“ï¼Œå¦‚æœæœ‰é¢‘é“ç©ºé—²ç›´æ¥æ’­æ”¾æ–°éŸ³é¢‘ï¼Œå¹¶é€€å‡º
-        //å¦‚æœæ²¡æœ‰ç©ºé—²é¢‘é“ï¼Œå…ˆæ‰¾åˆ°æœ€å¼€å§‹æ’­æ”¾çš„é¢‘é“ï¼ˆoldestï¼‰ï¼Œç¨åä½¿ç”¨
+        //±éÀúËùÓĞÆµµÀ£¬Èç¹ûÓĞÆµµÀ¿ÕÏĞÖ±½Ó²¥·ÅĞÂÒôÆµ£¬²¢ÍË³ö
+        //Èç¹ûÃ»ÓĞ¿ÕÏĞÆµµÀ£¬ÏÈÕÒµ½×î¿ªÊ¼²¥·ÅµÄÆµµÀ£¨oldest£©£¬ÉÔºóÊ¹ÓÃ
         int oldest = -1;
         float time = 10000000.0f;
         for (int i = 0; i < a_channels.Length; i++)
@@ -98,7 +98,7 @@ public class AudioManager : MonoBehaviour
                 return i;
             }
         }
-        //è¿è¡Œåˆ°è¿™é‡Œè¯´æ˜æ²¡æœ‰ç©ºé—²é¢‘é“ã€‚è®©æ–°çš„éŸ³é¢‘é¡¶æ›¿æœ€æ—©æ’­å‡ºçš„éŸ³é¢‘
+        //ÔËĞĞµ½ÕâÀïËµÃ÷Ã»ÓĞ¿ÕÏĞÆµµÀ¡£ÈÃĞÂµÄÒôÆµ¶¥Ìæ×îÔç²¥³öµÄÒôÆµ
         if (oldest >= 0)
         {
             a_channels[oldest].channel.clip = clip;
@@ -114,8 +114,8 @@ public class AudioManager : MonoBehaviour
         return -1;
     }
 
-    //å¾ªç¯æ’­æ”¾ï¼Œå‚æ•°ä¸ºéŸ³é¢‘ç‰‡æ®µã€å·¦å³å£°é“ã€é€Ÿåº¦
-    //æœªè€ƒè™‘éŸ³æ•ˆé¡¶æ›¿
+    //Ñ­»·²¥·Å£¬²ÎÊıÎªÒôÆµÆ¬¶Î¡¢×óÓÒÉùµÀ¡¢ËÙ¶È
+    //Î´¿¼ÂÇÒôĞ§¶¥Ìæ
     public int PlayLoop(AudioClip clip, float pan, float pitch = 1.0f)
     {
         for (int i = 0; i < a_channels.Length; i++)
@@ -136,7 +136,7 @@ public class AudioManager : MonoBehaviour
         return -1;
     }
 
-    //æ›¿æ¢BGM
+    //Ìæ»»BGM
     public void SetBGM(AudioClip clip, float pan, float pitch = 1.0f)
     {
         b_channels.channel.clip = clip;
@@ -149,7 +149,7 @@ public class AudioManager : MonoBehaviour
         b_channels.keyOnTime = Time.time;
     }
 
-    //è®¾ç½®è§’è‰²è¯­éŸ³
+    //ÉèÖÃ½ÇÉ«ÓïÒô
     public void SetVoice(AudioClip clip, float pan, int id = 0,float pitch = 1.0f)
     {
         v_channels[id].channel.clip = clip;
@@ -162,7 +162,7 @@ public class AudioManager : MonoBehaviour
         v_channels[id].keyOnTime = Time.time;
     }
 
-    //è®¾ç½®å…¨å±€éŸ³é‡
+    //ÉèÖÃÈ«¾ÖÒôÁ¿
     public void SetVolume()
     {
         for (int i = 0; i < a_channels.Length; i++)
@@ -180,7 +180,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    //åœæ­¢æ‰€æœ‰éŸ³é¢‘
+    //Í£Ö¹ËùÓĞÒôÆµ
     public void StopAll()
     {
         foreach (CHANNEL channel in a_channels)
@@ -190,7 +190,7 @@ public class AudioManager : MonoBehaviour
             channel.channel.Stop();
     }
 
-    //æ ¹æ®é¢‘é“IDåœæ­¢éŸ³é¢‘
+    //¸ù¾İÆµµÀIDÍ£Ö¹ÒôÆµ
     public void Stop(string tag,int id = 0)
     {
         if (tag == "audio")
@@ -215,7 +215,7 @@ public class AudioManager : MonoBehaviour
         else return;
     }
 
-    //åœæ­¢æ‰€æœ‰è§’è‰²è¯­éŸ³
+    //Í£Ö¹ËùÓĞ½ÇÉ«ÓïÒô
     public void StopVoice()
     {
         foreach (CHANNEL channel in v_channels)

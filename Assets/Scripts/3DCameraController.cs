@@ -4,49 +4,49 @@ using UnityEngine;
 
 public class Camera3DController : MonoBehaviour
 {
-    //å°†è¯¥è„šæœ¬æŒ‚è½½åˆ°ä¸€ä¸ªç©ºç‰©ä½“ä¸Šï¼Œå°†ç›¸æœºæ‹–åˆ°è¯¥ç©ºç‰©ä½“ä¸‹ä½œä¸ºå­ç‰©ä½“å¹¶å°†Transformé‡ç½®ä¸º0
+    //½«¸Ã½Å±¾¹ÒÔØµ½Ò»¸ö¿ÕÎïÌåÉÏ£¬½«Ïà»úÍÏµ½¸Ã¿ÕÎïÌåÏÂ×÷Îª×ÓÎïÌå²¢½«TransformÖØÖÃÎª0
 
-    [Header("ä¸»ç›¸æœº")]
-    public Transform maincamera;//ä½œä¸ºå­ç‰©ä½“çš„ç›¸æœº
+    [Header("Ö÷Ïà»ú")]
+    public Transform maincamera;//×÷Îª×ÓÎïÌåµÄÏà»ú
 
-    [Header("ç›®æ ‡")]
-    public Transform target;//æ‹æ‘„ç›®æ ‡
-    public float direction = 10.0f;//è·ç¦»
-    public float mindirection = 5.0f;//æœ€å°è·ç¦»
-    public float maxdirection = 20.0f;//æœ€å¤§è·ç¦»
+    [Header("Ä¿±ê")]
+    public Transform target;//ÅÄÉãÄ¿±ê
+    public float direction = 10.0f;//¾àÀë
+    public float mindirection = 5.0f;//×îĞ¡¾àÀë
+    public float maxdirection = 20.0f;//×î´ó¾àÀë
     public bool isSmoothDire = true;
-    public float directionSpeed = 10.0f;//è·ç¦»æ§åˆ¶çµæ•åº¦
-    public float directionTime = 0.4f;//è·ç¦»å˜åŒ–æ‰€éœ€æ—¶é—´
+    public float directionSpeed = 10.0f;//¾àÀë¿ØÖÆÁéÃô¶È
+    public float directionTime = 0.4f;//¾àÀë±ä»¯ËùĞèÊ±¼ä
     private float directionVelocity = 0.0f;
     private float currentdirection;
 
-    [Header("é•œå¤´ç”»é¢")]
-    public float size = 5;//ç”»é¢å°ºå¯¸
-    public float maxsize = 5;//æœ€å¤§ç”»é¢å°ºå¯¸
-    public float minsize = 5;//æœ€å°ç”»é¢å°ºå¯¸
+    [Header("¾µÍ·»­Ãæ")]
+    public float size = 5;//»­Ãæ³ß´ç
+    public float maxsize = 5;//×î´ó»­Ãæ³ß´ç
+    public float minsize = 5;//×îĞ¡»­Ãæ³ß´ç
     public bool isSmoothSize = true;
-    public bool isOrthographic = true;//æ˜¯å¦ä¸ºæ­£äº¤ç›¸æœº
-    [Range(1, 179)] public int FOV = 60;//ç›¸æœºFOV
+    public bool isOrthographic = true;//ÊÇ·ñÎªÕı½»Ïà»ú
+    [Range(1, 179)] public int FOV = 60;//Ïà»úFOV
 
-    [Header("é•œå¤´æ—‹è½¬")]
-    public float elevation = 210.0f;//æ‘„åƒæœºä»°è§’
+    [Header("¾µÍ·Ğı×ª")]
+    public float elevation = 210.0f;//ÉãÏñ»úÑö½Ç
     public bool isSmoothRota = true;
-    public float rotationTime = 0.2f;//æ—‹è½¬å˜åŒ–æ‰€éœ€æ—¶é—´
+    public float rotationTime = 0.2f;//Ğı×ª±ä»¯ËùĞèÊ±¼ä
     private Quaternion targetQuaternion;
     private float yVelocity = 0.0f;
     private float targetRotx, targetRoty, targetRotz = 0;
 
-    [Header("é•œå¤´ç§»åŠ¨")]
-    public bool LockCameraPosition = false;//ç›¸æœºé”
+    [Header("¾µÍ·ÒÆ¶¯")]
+    public bool LockCameraPosition = false;//Ïà»úËø
     public bool isSmoothMove = true;
-    public float moveTime = 0.5f; //å¹³æ»‘ç§»åŠ¨æ‰€éœ€æ—¶é—´
+    public float moveTime = 0.5f; //Æ½»¬ÒÆ¶¯ËùĞèÊ±¼ä
     private Vector3 cameraVelocity = Vector3.zero;
     private float offsetx, offsety, offsetz = 0;
 
-    [Header("é•œå¤´éœ‡åŠ¨")]
-    public float shakeDuration = 0.5f;//éœ‡åŠ¨æ—¶é—´
-    public float shakeAmplitude = 0.1f;//éœ‡åŠ¨å¹…åº¦
-    public float shakeFrequency = 1.0f;//éœ‡åŠ¨é¢‘ç‡
+    [Header("¾µÍ·Õğ¶¯")]
+    public float shakeDuration = 0.5f;//Õğ¶¯Ê±¼ä
+    public float shakeAmplitude = 0.1f;//Õğ¶¯·ù¶È
+    public float shakeFrequency = 1.0f;//Õğ¶¯ÆµÂÊ
     public bool isShake = false;
     private float shakeTimer = 0.0f;
     private float shakeFix = 0.0f;
@@ -81,15 +81,15 @@ public class Camera3DController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            //å‹¿ç”¨éœ‡åŠ¨ï¼Œæ­£åœ¨ä¿®æ”¹
+            //ÎğÓÃÕğ¶¯£¬ÕıÔÚĞŞ¸Ä
             //CameShake();
         }
     }
 
     void LateUpdate()
-    {//ä½¿ç”¨è¿™ä¸ªæ›´æ–°æ–¹æ³•å°±æ˜¯ä¿è¯æ¯å¸§åˆ·æ–°æ—¶ï¼Œç‰©ä½“å…ˆå˜åŒ–ï¼Œç„¶åæ‘„åƒæœºæ‰è·Ÿéšçš„
+    {//Ê¹ÓÃÕâ¸ö¸üĞÂ·½·¨¾ÍÊÇ±£Ö¤Ã¿Ö¡Ë¢ĞÂÊ±£¬ÎïÌåÏÈ±ä»¯£¬È»ºóÉãÏñ»ú²Å¸úËæµÄ
         if (!target)
-            return;//å®‰å…¨ä¿æŠ¤
+            return;//°²È«±£»¤
         CameRotate();
         CameMove();
         CameSize();
@@ -115,7 +115,7 @@ public class Camera3DController : MonoBehaviour
             targetRoty, targetRotz));
         }
         
-    }//é•œå¤´æ—‹è½¬
+    }//¾µÍ·Ğı×ª
 
     private void CameMove()
     {
@@ -143,7 +143,7 @@ public class Camera3DController : MonoBehaviour
         offsetz = currentdirection * Mathf.Cos(Mathf.Deg2Rad * elevation);
         offsety = -1 * currentdirection * Mathf.Sin(Mathf.Deg2Rad * elevation);
         maincamera.localPosition = new Vector3(offsetx, offsety, offsetz);
-    }//é•œå¤´ç§»åŠ¨
+    }//¾µÍ·ÒÆ¶¯
 
     private void CameSize()
     {
@@ -156,12 +156,12 @@ public class Camera3DController : MonoBehaviour
         {
             Camera.main.fieldOfView = FOV;
         }
-    }//é•œå¤´å°ºå¯¸
+    }//¾µÍ·³ß´ç
 
     private void CameLookAt()
     {
         maincamera.LookAt(transform.position);
-    }//é•œå¤´æœå‘
+    }//¾µÍ·³¯Ïò
 
     private void CameShake()
     {
@@ -195,5 +195,5 @@ public class Camera3DController : MonoBehaviour
             if (hit.collider.tag == "Road")
                 direction = (hit.transform.position - transform.position).magnitude - 1.0f;
         }
-    }//é˜²ç©¿å¢™
+    }//·À´©Ç½
 }

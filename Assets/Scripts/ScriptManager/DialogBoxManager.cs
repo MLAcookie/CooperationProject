@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class DialogBoxManager : MonoBehaviour
@@ -9,35 +11,81 @@ public class DialogBoxManager : MonoBehaviour
     public static DialogBoxManager instance;
     public TextMeshProUGUI SpeakerName;
     public TextMeshProUGUI TalkText;
-    public GameObject Img_Background;//background image
-    public GameObject LeftChara, CenterChara, RightChara;//characters
+    public GameObject Img_Background; //background image
+    public GameObject LeftChara,
+        CenterChara,
+        RightChara; //characters
     public GameObject DialogueBoxPanel;
-    public Dictionary<string, GameObject> CharaPosition;//match character position
+    public Dictionary<string, GameObject> CharaPosition; //match character position
 
-    public bool ShowTalkText;//judge if display complete
+    public bool ShowTalkText; //judge if display complete
     public string TempText;
     public string CorText;
     public float TextSpeed = 10.0f;
 
+    public Dictionary<string, string> speakers;
+
     private void Awake()
     {
         instance = this;
-        CharaPosition = new Dictionary<string, GameObject> { { "left", LeftChara }, { "mid", CenterChara }, { "right", RightChara } };
+        speakers = new Dictionary<string, string>();
+        CharaPosition = new Dictionary<string, GameObject>
+        {
+            { "left", LeftChara },
+            { "mid", CenterChara },
+            { "right", RightChara }
+        };
     }
 
-    public void LoadCharacter(string path, string pos)
+    public void AddSpeaker(string pos, string name, string fgPath)
     {
-        Sprite TempSprite = (Sprite)Resources.Load("FG/" + path, typeof(Sprite));
+        //speakers = new Dictionary<string, string>();
+        speakers[pos] = name;
+        //speakers.Add(pos, name);
+        Sprite TempSprite = (Sprite)Resources.Load("FG/" + fgPath, typeof(Sprite));
+        GameObject character = CharaPosition[pos];
+        character.GetComponent<Image>().sprite = TempSprite;
+        character.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+    }
+
+    public void DelSpeaker(string pos)
+    {
+        GameObject character = CharaPosition[pos];
+        character.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        speakers.Remove(pos);
+    }
+
+    public void SwitchSpeaker(string name)
+    {
+        GameObject character;
+        foreach (KeyValuePair<string, string> pair in speakers)
+        {
+            if (pair.Value != name)
+            {
+                character = CharaPosition[pair.Key];
+                character.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f, 1);
+            }
+            else
+            {
+                character = CharaPosition[pair.Key];
+                character.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
+        }
+    }
+
+    public void LoadCharacter(string pos, string path)
+    {
+        Sprite TempSprite = (Sprite)
+            Resources.Load("FG/" + speakers[pos] + '/' + path, typeof(Sprite));
         GameObject character = CharaPosition[pos];
         //initialize sprite
         character.GetComponent<Image>().sprite = TempSprite;
         character.GetComponent<Image>().color = new Color(1, 1, 1, 1);
     }
 
-    //method to control character display( on ->display off->erase)
     public void CharacterDisplay(string pos, string type)
     {
-        if (pos == "all")//process all positions
+        if (pos == "all") //process all positions
         {
             if (type == "on")
             {
@@ -52,7 +100,7 @@ public class DialogBoxManager : MonoBehaviour
                 CharaPosition["right"].GetComponent<Image>().color = new Color(1, 1, 1, 0);
             }
         }
-        else//process single position
+        else
         {
             if (type == "on")
             {
@@ -91,5 +139,16 @@ public class DialogBoxManager : MonoBehaviour
         StopCoroutine("ShowDialogueCoroutine");
         this.CorText = text;
         StartCoroutine("ShowDialogueCoroutine");
+    }
+
+    public void OpenDiglogBox(string filename, int index)
+    {
+        DialogueBoxPanel.SetActive(true);
+        TextParser.instance.GetText(filename, index);
+    }
+
+    public void CloseDiglogBox()
+    {
+        DialogueBoxPanel.SetActive(false);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class TextParser : MonoBehaviour
@@ -9,15 +10,13 @@ public class TextParser : MonoBehaviour
     public string[] TempScript;
     public string TextFileName;
     public int LineIndex;
+
+    private bool SwitchMode = false;
     private void Awake()
     {
         instance = this;
     }
 
-    private void Start()
-    {
-        GetText("01", 0);
-    }
     public void GetText(string name, int index)
     {
         Debug.Log("Start reading FileText");
@@ -30,18 +29,18 @@ public class TextParser : MonoBehaviour
 
     public void ParsingText(int index)
     {
-        if(LineIndex >= TextLines.Length)
+        if (LineIndex >= TextLines.Length)
         {
             return;
         }
         TempScript = TextLines[index].Split('|');
-        // *| Ê≥®ÈáäÊåá‰ª§
+        // *| ◊¢ Õ÷∏¡Ó
         if (TempScript[0] == "*")
         {
             LineIndex++;
             ParsingText(LineIndex);
         }
-        // C| ÂëΩ‰ª§Êåá‰ª§
+        // C| √¸¡Ó÷∏¡Ó
         else if (TempScript[0] == "C")
         {
             if (TempScript[1] == "setbg")
@@ -54,14 +53,14 @@ public class TextParser : MonoBehaviour
             {
                 {
                     if (TempScript[2] != "null")
-                    {                                              //ËßíËâ≤Âêç          //Á´ãÁªòÂêç           //‰ΩçÁΩÆ
+                    {                                          
                         Debug.Log("setfg");
-                        DialogBoxManager.instance.LoadCharacter(TempScript[3] + "/" + TempScript[4] ,TempScript[2]);
+                        DialogBoxManager.instance.LoadCharacter(TempScript[2] , TempScript[3]);
                         DialogBoxManager.instance.CharacterDisplay(TempScript[2], "on");
                     }
                 }
             }
-            else if (TempScript[1] == "deletefg")
+            else if (TempScript[1] == "delfg")
             {
                 DialogBoxManager.instance.CharacterDisplay(TempScript[2], "off");
             }
@@ -73,13 +72,32 @@ public class TextParser : MonoBehaviour
             {
                 //(stop BGM Method)
             }
+            else if (TempScript[1] == "openswitch") 
+            {
+                SwitchMode = true;
+            }
+            else if (TempScript[1] == "closeswitch")
+            {
+                SwitchMode = false;
+            }
+            else if (TempScript[1] == "add")
+            {
+                DialogBoxManager.instance.AddSpeaker(TempScript[2], TempScript[3], TempScript[3] + "/" + TempScript[4]);
+            }
             LineIndex++;
             ParsingText(LineIndex);
         }
         else if(TempScript[0] == "S")
         {
             DialogBoxManager.instance.UpdateSpeakerName(TempScript[1]);
+            if(SwitchMode) DialogBoxManager.instance.SwitchSpeaker(TempScript[1]);
             DialogBoxManager.instance.DisplayDialogue(TempScript[2]);
+            LineIndex++;
+            return;
+        }
+        else
+        {
+            DialogBoxManager.instance.DisplayDialogue(TempScript[0]);
             LineIndex++;
             return;
         }

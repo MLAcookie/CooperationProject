@@ -6,21 +6,21 @@ using UnityEngine;
 
 public class GameArchive
 {
-    //ä½äºCç›˜Userçš„AppDataä¸­ï¼Œå¯è¾“å‡ºæŸ¥çœ‹
+    //Î»ÓÚCÅÌUserµÄAppDataÖĞ£¬¿ÉÊä³ö²é¿´
     private static string playDataPath = Application.persistentDataPath + "/Save/SlotList/";
     private static string settingDataPath = Application.persistentDataPath + "/Save/";
 
-    //å¯¹è±¡è½¬æ¢ä¸ºJsonå­˜å‚¨
+    //¶ÔÏó×ª»»ÎªJson´æ´¢
     private static void SaveJson(object obj, string path, string fileName)
     {
         StreamWriter sw = null;
         try
         {
-            //å¯¹è±¡è½¬Json
+            //¶ÔÏó×ªJson
             string jsonStr = JsonUtility.ToJson(obj);
-            //æ–‡ä»¶å¤¹åˆ¤ç©º
+            //ÎÄ¼ş¼ĞÅĞ¿Õ
             if (!Directory.Exists(path)) Directory.CreateDirectory(path);
-            //å¼€å¯æ–‡ä»¶æµå†™å…¥
+            //¿ªÆôÎÄ¼şÁ÷Ğ´Èë
             sw = new StreamWriter(
                 new FileStream(path + "/" + fileName.Split('.')[0] + ".json", FileMode.Create),
                 Encoding.UTF8);
@@ -37,13 +37,13 @@ public class GameArchive
         }
     }
 
-    //è¯»å–Jsonæ–‡ä»¶è½¬åŒ–ä¸ºå¯¹è±¡
+    //¶ÁÈ¡JsonÎÄ¼ş×ª»¯Îª¶ÔÏó
     private static T LoadJson<T>(string filePath)
     {
         StreamReader sr = null;
         try
         {
-            //æ–‡ä»¶å¤¹åˆ¤ç©º
+            //ÎÄ¼ş¼ĞÅĞ¿Õ
             if (!File.Exists(filePath))
             {
                 Debug.LogWarning("File not exist: " + filePath + " in LoadJson<T>");
@@ -51,7 +51,7 @@ public class GameArchive
             }
             sr = new StreamReader(new FileStream(filePath, FileMode.Open), Encoding.UTF8);
             string jsonStr = sr.ReadToEnd();
-            //è¯»å–åˆ°çš„Jsonå­—ç¬¦ä¸²è§£æä¸ºæ³›å‹å¯¹è±¡è¿”å›
+            //¶ÁÈ¡µ½µÄJson×Ö·û´®½âÎöÎª·ºĞÍ¶ÔÏó·µ»Ø
             return JsonUtility.FromJson<T>(jsonStr);
         }
         catch (Exception e)
@@ -65,7 +65,7 @@ public class GameArchive
         }
     }
 
-    //åˆ é™¤Jsonæ–‡ä»¶
+    //É¾³ıJsonÎÄ¼ş
     public static void DeleteJson(string filePath)
     {
         try
@@ -80,25 +80,25 @@ public class GameArchive
         }
     }
 
-    //ä¿å­˜è¿›åº¦
-    //å¯æ ¹æ®å­˜æ¡£æ§½ä½ä¸åŒå­˜å…¥ä¸åŒfileName
+    //±£´æ½ø¶È
+    //¿É¸ù¾İ´æµµ²ÛÎ»²»Í¬´æÈë²»Í¬fileName
     /*
     public static void SavePlayModel(PlaySave model, string fileName)
     {
         SaveJson(model, playDataPath, fileName);
     }
-    //è¯»å–è¯¥fileNameçš„è¿›åº¦å­˜æ¡£
+    //¶ÁÈ¡¸ÃfileNameµÄ½ø¶È´æµµ
     public static PlaySave LoadPlayModel(string fileName)
     {
         return LoadJson<PlaySave>(playDataPath + "/" + fileName.Split('.')[0] + ".json");
     }
-    //åˆ é™¤æ¡£æ¡ˆ
+    //É¾³ıµµ°¸
     public static void DeletePlayModel(string fileName)
     {
         DeleteJson(playDataPath + "/" + fileName.Split('.')[0] + ".json");
     }
 
-    //è¯»å–è¿›åº¦å­˜æ¡£åˆ—è¡¨ï¼Œç”¨ä»¥æ‰€æœ‰å­˜æ¡£å±•ç¤º
+    //¶ÁÈ¡½ø¶È´æµµÁĞ±í£¬ÓÃÒÔËùÓĞ´æµµÕ¹Ê¾
     public static List<PlaySave> LoadPlayModelList()
     {
         string[] fileList = Directory.GetFiles(playDataPath + "/", "*.json");
@@ -109,19 +109,19 @@ public class GameArchive
         }
         return res;
     }
-    //è¯»å–è¿›åº¦å­˜æ¡£å¹¶åŠ è½½
+    //¶ÁÈ¡½ø¶È´æµµ²¢¼ÓÔØ
     public static void LoadPlayModelandLoadScene(string fileName)
     {
         PlaySave playSave = LoadPlayModel(fileName);
         RPGManager.instance.CurrentPlaySave = playSave;
         UnityEngine.SceneManagement.SceneManager.LoadScene(playSave.currentScene);
     }
-    //å‚¨å­˜å…¨å±€è®¾ç½®
+    //´¢´æÈ«¾ÖÉèÖÃ
     public static void SaveSettingModel(SettingSave model)
     {
         SaveJson(model, settingDataPath, "Setting.json");
     }
-    //è¯»å–å…¨å±€è®¾ç½®
+    //¶ÁÈ¡È«¾ÖÉèÖÃ
     public static void LoadSettingModel()
     {
         GameSetting.SetSettingModel(LoadJson<SettingSave>(settingDataPath + "/Setting.json"));
