@@ -66,6 +66,7 @@ public class CutLine : MonoBehaviour
             {
                 if (isDraw)
                 {
+                    FieldGameEvent.instance.startCutting();
                     endPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
                     line.SetPosition(1, endPoint);
                 }
@@ -78,7 +79,7 @@ public class CutLine : MonoBehaviour
                     line.positionCount = 0;
                     isDraw = false;
 
-                    FieldGameEvent.instance.Cutting();
+                    FieldGameEvent.instance.endCutting();
 
                     cutObjects.Clear();
 

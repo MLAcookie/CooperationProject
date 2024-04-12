@@ -8,7 +8,7 @@ public class FieldBody : MonoBehaviour
     public Vector3 offset;
     void Start()
     {
-        FieldGameEvent.instance.onCut += onCutting;
+        FieldGameEvent.instance.onEndCut += onCutting;
     }
 
     void Update()
@@ -21,7 +21,7 @@ public class FieldBody : MonoBehaviour
         fi_part.SetActive(true);
         fi_part.transform.position = transform.position + offset;
         fi_part.transform.rotation = transform.rotation;
-        FieldGameEvent.instance.onCut -= onCutting;
+        FieldGameEvent.instance.onEndCut -= onCutting;
         gameObject.SetActive(false);
     }
 }

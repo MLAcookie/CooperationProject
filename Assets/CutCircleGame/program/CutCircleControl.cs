@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,10 +17,27 @@ public class CutCircleControl : MonoBehaviour
 
     private float rightRot = 30;
 
+    private bool canC = false;
+
     void Start()
     {
         dlNext();
+        CutCircleGameEvent.instance.onShow += onC;
+        CutCircleGameEvent.instance.onGameFinish += endC;
     }
+
+    private void onC(int nu)
+    {
+        if(nu == -1)
+        {
+            canC = true;
+        }
+    }
+    private void endC()
+    {
+        canC = false;
+    }
+
 
     void Update()
     {
@@ -31,7 +49,7 @@ public class CutCircleControl : MonoBehaviour
                 acc -= Time.deltaTime * 1f;
                 rightRot += acc;
                 graph.transform.eulerAngles = new Vector3(0, 0, rightRot);
-                if(acc < -8f)
+                if(acc < -4f)
                 {
                     dlNext();
                     inRotEnd = true;
@@ -58,7 +76,7 @@ public class CutCircleControl : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && canC == true)
                 {
                     inRot = true;
                 }

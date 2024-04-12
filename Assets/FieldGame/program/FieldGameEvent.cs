@@ -22,13 +22,21 @@ public class FieldGameEvent : MonoBehaviour
 
 
 
-
-    public event Action onCut;
-    public void Cutting()
+    public event Action onStartCut;
+    public void startCutting()
     {
-        if (onCut != null)
+        if (onStartCut != null)
         {
-            onCut();
+            onStartCut();
+        }
+    }
+
+    public event Action onEndCut;
+    public void endCutting()
+    {
+        if (onEndCut != null)
+        {
+            onEndCut();
         }
     }
 

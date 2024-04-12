@@ -172,10 +172,10 @@ public class Graphic : MaskableGraphic
                         beCD = 0.2f;
                         segment += 1;
                     }
-                    if (nextSeg == 24)
+                    if (nextSeg >= 24)
                     {
                         beCD = 0.2f;
-                        segment += nextSeg / beSeg;
+                        segment += 2 * (nextSeg - beSeg) / 10;
                     }
                     CD = beCD;
                 }
