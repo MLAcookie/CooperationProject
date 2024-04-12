@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: cbb1b81e10799d34386423bb36a1d65e
+  - enabled: 1
+    path: Assets/Scenes/CircleScene.unity
+    guid: 43e1b4d5073e1ea44b4468c856b1c45c
   m_configObjects: {}

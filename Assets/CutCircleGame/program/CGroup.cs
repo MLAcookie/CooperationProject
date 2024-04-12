@@ -24,7 +24,7 @@ public class CGroup : MonoBehaviour
         {
             if (cg.alpha < 1)
             {
-                cg.alpha += 0.2f * Time.deltaTime;
+                cg.alpha += 1f * Time.deltaTime;
             }
             else
             {

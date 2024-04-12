@@ -5,22 +5,20 @@ using UnityEngine.UI;
 
 public class Graphic : MaskableGraphic
 {
-
     List<UIVertex> vertexList = new List<UIVertex>();
 
-    [Range(0,360)] 
+    [Range(0, 360)]
     public float fillRange;
     public Texture texture;
 
     public float radio;
 
-    [Range(3, 7000)] 
+    [Range(3, 7000)]
     public int segment;
 
     public float lineWidth = 10;
 
     public bool stat = false;
-
 
     private int beSeg = 3;
     private int nextSeg;
@@ -31,11 +29,9 @@ public class Graphic : MaskableGraphic
 
     public override Texture mainTexture
     {
-        get
-        {
-            return texture;
-        }
+        get { return texture; }
     }
+
     protected override void Start()
     {
         if (stat == false)
@@ -44,13 +40,11 @@ public class Graphic : MaskableGraphic
         }
     }
 
-
-
     protected override void OnPopulateMesh(VertexHelper vh)
     {
         //Debug.Log("run");
         vh.Clear();
-        if(vertexList.Count > 2 )
+        if (vertexList.Count > 2)
         {
             lineWidth = Mathf.Clamp(lineWidth, 0, radio);
             UIVertex uiVertex0;
@@ -59,23 +53,20 @@ public class Graphic : MaskableGraphic
             UIVertex uiVertex3;
             Vector3 pointToCenter;
 
-            
-
-            for ( int i = 1; i < vertexList.Count; i++)
+            for (int i = 1; i < vertexList.Count; i++)
             {
-                UIVertex[] uiVertexs=new UIVertex[4];
-
+                UIVertex[] uiVertexs = new UIVertex[4];
 
                 uiVertex0 = new UIVertex();
                 uiVertex0.position = vertexList[i].position;
                 uiVertex0.color = color;
-                if(texture != null)
+                if (texture != null)
                 {
-                    uiVertex0.uv0 = new Vector2(uiVertex0.position.x / texture.width + 0.5f,
-                        uiVertex0.position.y / texture.height + 0.5f);
-
+                    uiVertex0.uv0 = new Vector2(
+                        uiVertex0.position.x / texture.width + 0.5f,
+                        uiVertex0.position.y / texture.height + 0.5f
+                    );
                 }
-
 
                 uiVertex1 = new UIVertex();
                 pointToCenter = (vertexList[i].position - Vector3.zero).normalized;
@@ -83,22 +74,22 @@ public class Graphic : MaskableGraphic
                 uiVertex1.color = color;
                 if (texture != null)
                 {
-                    uiVertex1.uv0 = new Vector2(uiVertex1.position.x / texture.width + 0.5f,
-                        uiVertex1.position.y / texture.height + 0.5f);
-
+                    uiVertex1.uv0 = new Vector2(
+                        uiVertex1.position.x / texture.width + 0.5f,
+                        uiVertex1.position.y / texture.height + 0.5f
+                    );
                 }
-
 
                 uiVertex2 = new UIVertex();
                 uiVertex2.position = vertexList[i - 1].position;
                 uiVertex2.color = color;
                 if (texture != null)
                 {
-                    uiVertex2.uv0 = new Vector2(uiVertex2.position.x / texture.width + 0.5f,
-                        uiVertex2.position.y / texture.height + 0.5f);
-
+                    uiVertex2.uv0 = new Vector2(
+                        uiVertex2.position.x / texture.width + 0.5f,
+                        uiVertex2.position.y / texture.height + 0.5f
+                    );
                 }
-
 
                 uiVertex3 = new UIVertex();
                 pointToCenter = (vertexList[i - 1].position - Vector3.zero).normalized;
@@ -106,9 +97,10 @@ public class Graphic : MaskableGraphic
                 uiVertex3.color = color;
                 if (texture != null)
                 {
-                    uiVertex3.uv0 = new Vector2(uiVertex3.position.x / texture.width + 0.5f,
-                        uiVertex3.position.y / texture.height + 0.5f);
-
+                    uiVertex3.uv0 = new Vector2(
+                        uiVertex3.position.x / texture.width + 0.5f,
+                        uiVertex3.position.y / texture.height + 0.5f
+                    );
                 }
 
                 uiVertexs[3] = uiVertex0;
@@ -116,14 +108,7 @@ public class Graphic : MaskableGraphic
                 uiVertexs[1] = uiVertex2;
                 uiVertexs[0] = uiVertex3;
 
-
-
-
-
-
                 vh.AddUIVertexQuad(uiVertexs);
-
-
             }
         }
     }
@@ -149,7 +134,6 @@ public class Graphic : MaskableGraphic
                 vertexList.Add(uiVertex);
             }
             SetVerticesDirty();
-
         }
 
         if (add == true)
@@ -190,7 +174,7 @@ public class Graphic : MaskableGraphic
 
     void turn(int dl)
     {
-       add = true;
-       nextSeg = Resourses.instance.serEdge(dl);
+        add = true;
+        nextSeg = Resourses.instance.serEdge(dl);
     }
 }

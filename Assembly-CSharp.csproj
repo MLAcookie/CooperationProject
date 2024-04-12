@@ -70,6 +70,7 @@
     <Compile Include="Assets\CutCircleGame\program\CutCircleControl.cs" />
     <Compile Include="Assets\FieldGame\program\FieldBody.cs" />
     <Compile Include="Assets\CutCircleGame\program\Resourses.cs" />
+    <Compile Include="Assets\Scripts\UI\PersonUI.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\TextParser.cs" />
     <Compile Include="Assets\Scripts\UI\SettingButton.cs" />
     <Compile Include="Assets\WaterCupGame\program\WaterCupManager.cs" />

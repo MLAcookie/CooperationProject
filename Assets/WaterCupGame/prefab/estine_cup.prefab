@@ -134,6 +134,9 @@ MonoBehaviour:
   originPos: {x: 0, y: 0}
   maxReserves: 0
   reserves: 0
+  level: 0
+  ID: 0
+  goalReserves: 0
   k1: {fileID: 21300000, guid: 437608de9cb44814595f60bf969b9efb, type: 3}
   k2: {fileID: 21300000, guid: 7a20ad19dbc594b438931af8d7bcf875, type: 3}
   k3: {fileID: 21300000, guid: 3d639a67f2915a440b9b46b7ad70fef2, type: 3}
@@ -197,7 +200,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.034478545, y: 1.142139}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.40633076, y: 0.26976746}
@@ -208,5 +211,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.84, y: 2.88}
+  m_Size: {x: 4.3399553, y: 5.384536}
   m_EdgeRadius: 0
