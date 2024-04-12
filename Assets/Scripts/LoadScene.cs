@@ -12,28 +12,28 @@ public class LoadScene : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel());//¿ªÆôĞ­³Ì
+        StartCoroutine(LoadLevel());//å¼€å¯åç¨‹
     }
 
     IEnumerator LoadLevel()
     {
-        loadScreen.SetActive(true);//¿ÉÒÔ¼ÓÔØ³¡¾°
+        loadScreen.SetActive(true);//å¯ä»¥åŠ è½½åœºæ™¯
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
 
-        operation.allowSceneActivation = false;//²»ÔÊĞí³¡¾°×Ô¶¯Ìø×ª
-        while (!operation.isDone)//³¡¾°¼ÓÔØÃ»ÓĞÍê³ÉÊ±
+        operation.allowSceneActivation = false;//ä¸å…è®¸åœºæ™¯è‡ªåŠ¨è·³è½¬
+        while (!operation.isDone)//åœºæ™¯åŠ è½½æ²¡æœ‰å®Œæˆæ—¶
         {
-            slider.value = operation.progress;//sliderµÄÖµ=¼ÓÔØµÄ½ø¶ÈÖµ
+            slider.value = operation.progress;//sliderçš„å€¼=åŠ è½½çš„è¿›åº¦å€¼
             text.text = operation.progress * 100 + "%";
 
             if (operation.progress >= 0.9F)
             {
                 slider.value = 1.0f;
                 text.text = "100%";
-                operation.allowSceneActivation = true;//ÔÊĞí³¡¾°×Ô¶¯Ìø×ª
+                operation.allowSceneActivation = true;//å…è®¸åœºæ™¯è‡ªåŠ¨è·³è½¬
             }
 
-            yield return null;//Ìø³öĞ­³Ì
+            yield return null;//è·³å‡ºåç¨‹
         }
     }
 }
