@@ -60,14 +60,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\External\DOTween\DOTweenAsyncExtensions.cs">
-      <Link>Runtime\External\DOTween\DOTweenAsyncExtensions.cs</Link>
-    </Compile>
+    <Compile Include="Assets\Plugins\UniTask\Runtime\External\DOTween\DOTweenAsyncExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\External\DOTween\UniTask.DOTween.asmdef">
-      <Link>Runtime\External\DOTween\UniTask.DOTween.asmdef</Link>
-    </None>
+    <None Include="Assets\Plugins\UniTask\Runtime\External\DOTween\UniTask.DOTween.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

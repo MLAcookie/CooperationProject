@@ -60,233 +60,83 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.WaitUntil.cs">
-      <Link>Runtime\UniTask.WaitUntil.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.Jobs.cs">
-      <Link>Runtime\UnityAsyncExtensions.Jobs.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\StatePool.cs">
-      <Link>Runtime\Internal\StatePool.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.Threading.cs">
-      <Link>Runtime\UniTask.Threading.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTaskVoid.cs">
-      <Link>Runtime\UniTaskVoid.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\ContinuationQueue.cs">
-      <Link>Runtime\Internal\ContinuationQueue.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\CompilerServices\AsyncMethodBuilderAttribute.cs">
-      <Link>Runtime\CompilerServices\AsyncMethodBuilderAttribute.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.cs">
-      <Link>Runtime\UnityAsyncExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\IUniTaskSource.cs">
-      <Link>Runtime\IUniTaskSource.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\UnityWebRequestExtensions.cs">
-      <Link>Runtime\Internal\UnityWebRequestExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\CancellationTokenEqualityComparer.cs">
-      <Link>Runtime\CancellationTokenEqualityComparer.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.cs">
-      <Link>Runtime\UniTask.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\AsyncUnit.cs">
-      <Link>Runtime\AsyncUnit.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\CancellationTokenSourceExtensions.cs">
-      <Link>Runtime\CancellationTokenSourceExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\EnumeratorAsyncExtensions.cs">
-      <Link>Runtime\EnumeratorAsyncExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\ExceptionExtensions.cs">
-      <Link>Runtime\ExceptionExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Triggers\AsyncTriggerBase.cs">
-      <Link>Runtime\Triggers\AsyncTriggerBase.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\UnityEqualityComparer.cs">
-      <Link>Runtime\Internal\UnityEqualityComparer.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\IUniTaskAsyncEnumerable.cs">
-      <Link>Runtime\IUniTaskAsyncEnumerable.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\_InternalVisibleTo.cs">
-      <Link>Runtime\_InternalVisibleTo.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\TaskTracker.cs">
-      <Link>Runtime\Internal\TaskTracker.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.AssetBundleRequestAllAssets.cs">
-      <Link>Runtime\UnityAsyncExtensions.AssetBundleRequestAllAssets.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\AsyncLazy.cs">
-      <Link>Runtime\AsyncLazy.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Progress.cs">
-      <Link>Runtime\Progress.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\MoveNextSource.cs">
-      <Link>Runtime\MoveNextSource.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.MonoBehaviour.cs">
-      <Link>Runtime\UnityAsyncExtensions.MonoBehaviour.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTaskExtensions.cs">
-      <Link>Runtime\UniTaskExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\CancellationTokenExtensions.cs">
-      <Link>Runtime\CancellationTokenExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\DiagnosticsExtensions.cs">
-      <Link>Runtime\Internal\DiagnosticsExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.Factory.cs">
-      <Link>Runtime\UniTask.Factory.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.WhenAll.cs">
-      <Link>Runtime\UniTask.WhenAll.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTaskCompletionSource.cs">
-      <Link>Runtime\UniTaskCompletionSource.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\ArrayPool.cs">
-      <Link>Runtime\Internal\ArrayPool.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\CompilerServices\AsyncUniTaskMethodBuilder.cs">
-      <Link>Runtime\CompilerServices\AsyncUniTaskMethodBuilder.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\PlayerLoopHelper.cs">
-      <Link>Runtime\PlayerLoopHelper.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityBindingExtensions.cs">
-      <Link>Runtime\UnityBindingExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\MinimumQueue.cs">
-      <Link>Runtime\Internal\MinimumQueue.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\EnumerableAsyncExtensions.cs">
-      <Link>Runtime\EnumerableAsyncExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTaskScheduler.cs">
-      <Link>Runtime\UniTaskScheduler.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\PlayerLoopTimer.cs">
-      <Link>Runtime\PlayerLoopTimer.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\PlayerLoopRunner.cs">
-      <Link>Runtime\Internal\PlayerLoopRunner.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Triggers\AsyncTriggerExtensions.cs">
-      <Link>Runtime\Triggers\AsyncTriggerExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\PooledDelegate.cs">
-      <Link>Runtime\Internal\PooledDelegate.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTaskExtensions.Shorthand.cs">
-      <Link>Runtime\UniTaskExtensions.Shorthand.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\WeakDictionary.cs">
-      <Link>Runtime\Internal\WeakDictionary.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.WhenAny.Generated.cs">
-      <Link>Runtime\UniTask.WhenAny.Generated.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.uGUI.cs">
-      <Link>Runtime\UnityAsyncExtensions.uGUI.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.Delay.cs">
-      <Link>Runtime\UniTask.Delay.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Triggers\MonoBehaviourMessagesTriggers.cs">
-      <Link>Runtime\Triggers\MonoBehaviourMessagesTriggers.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\ArrayPoolUtil.cs">
-      <Link>Runtime\Internal\ArrayPoolUtil.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.WhenAny.cs">
-      <Link>Runtime\UniTask.WhenAny.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\ValueStopwatch.cs">
-      <Link>Runtime\Internal\ValueStopwatch.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Triggers\AsyncStartTrigger.cs">
-      <Link>Runtime\Triggers\AsyncStartTrigger.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\TimeoutController.cs">
-      <Link>Runtime\TimeoutController.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\RuntimeHelpersAbstraction.cs">
-      <Link>Runtime\Internal\RuntimeHelpersAbstraction.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\TaskPool.cs">
-      <Link>Runtime\TaskPool.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Triggers\AsyncAwakeTrigger.cs">
-      <Link>Runtime\Triggers\AsyncAwakeTrigger.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityWebRequestException.cs">
-      <Link>Runtime\UnityWebRequestException.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\CompilerServices\AsyncUniTaskVoidMethodBuilder.cs">
-      <Link>Runtime\CompilerServices\AsyncUniTaskVoidMethodBuilder.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\Error.cs">
-      <Link>Runtime\Internal\Error.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Internal\ArrayUtil.cs">
-      <Link>Runtime\Internal\ArrayUtil.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\TriggerEvent.cs">
-      <Link>Runtime\TriggerEvent.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTaskObservableExtensions.cs">
-      <Link>Runtime\UniTaskObservableExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityAwaitableExtensions.cs">
-      <Link>Runtime\UnityAwaitableExtensions.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.AsValueTask.cs">
-      <Link>Runtime\UniTask.AsValueTask.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\CompilerServices\StateMachineRunner.cs">
-      <Link>Runtime\CompilerServices\StateMachineRunner.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.Run.cs">
-      <Link>Runtime\UniTask.Run.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\AsyncReactiveProperty.cs">
-      <Link>Runtime\AsyncReactiveProperty.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.AsyncGPUReadback.cs">
-      <Link>Runtime\UnityAsyncExtensions.AsyncGPUReadback.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTaskSynchronizationContext.cs">
-      <Link>Runtime\UniTaskSynchronizationContext.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.WhenAll.Generated.cs">
-      <Link>Runtime\UniTask.WhenAll.Generated.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.Bridge.cs">
-      <Link>Runtime\UniTask.Bridge.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Triggers\AsyncDestroyTrigger.cs">
-      <Link>Runtime\Triggers\AsyncDestroyTrigger.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Channel.cs">
-      <Link>Runtime\Channel.cs</Link>
-    </Compile>
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Triggers\AsyncAwakeTrigger.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTaskVoid.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\PlayerLoopRunner.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.MonoBehaviour.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTaskObservableExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.uGUI.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\TaskTracker.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.Bridge.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\CompilerServices\AsyncUniTaskMethodBuilder.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityAwaitableExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\TaskPool.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\CancellationTokenEqualityComparer.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\DiagnosticsExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\CancellationTokenExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.Jobs.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Triggers\AsyncTriggerBase.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.WhenAll.Generated.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Progress.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\AsyncReactiveProperty.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.Delay.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\IUniTaskSource.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.AsValueTask.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\ContinuationQueue.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\EnumeratorAsyncExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTaskExtensions.Shorthand.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTaskCompletionSource.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.WhenAll.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.Factory.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.AssetBundleRequestAllAssets.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\RuntimeHelpersAbstraction.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\UnityEqualityComparer.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\ExceptionExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\CancellationTokenSourceExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Triggers\MonoBehaviourMessagesTriggers.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\TriggerEvent.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\PlayerLoopHelper.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\UnityWebRequestExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\CompilerServices\StateMachineRunner.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Triggers\AsyncDestroyTrigger.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\ArrayPool.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\CompilerServices\AsyncMethodBuilderAttribute.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.WhenAny.Generated.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\ValueStopwatch.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\CompilerServices\AsyncUniTaskVoidMethodBuilder.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\AsyncUnit.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\EnumerableAsyncExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\IUniTaskAsyncEnumerable.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Triggers\AsyncTriggerExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\TimeoutController.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\AsyncLazy.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\ArrayUtil.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Channel.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.WhenAny.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Triggers\AsyncStartTrigger.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\MinimumQueue.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTaskExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\StatePool.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTaskSynchronizationContext.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTaskScheduler.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.WaitUntil.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\PlayerLoopTimer.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.Run.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UniTask.Threading.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\WeakDictionary.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\PooledDelegate.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\_InternalVisibleTo.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityWebRequestException.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityAsyncExtensions.AsyncGPUReadback.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\ArrayPoolUtil.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Internal\Error.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\UnityBindingExtensions.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\MoveNextSource.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\UniTask.asmdef">
-      <Link>Runtime\UniTask.asmdef</Link>
-    </None>
+    <None Include="Assets\Plugins\UniTask\Runtime\UniTask.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -60,230 +60,82 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Skip.cs">
-      <Link>Runtime\Linq\Skip.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\AsyncEnumeratorBase.cs">
-      <Link>Runtime\Linq\AsyncEnumeratorBase.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Concat.cs">
-      <Link>Runtime\Linq\Concat.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\TakeWhile.cs">
-      <Link>Runtime\Linq\TakeWhile.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Create.cs">
-      <Link>Runtime\Linq\Create.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\SkipWhile.cs">
-      <Link>Runtime\Linq\SkipWhile.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Where.cs">
-      <Link>Runtime\Linq\Where.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\OfType.cs">
-      <Link>Runtime\Linq\OfType.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\MinMax.cs">
-      <Link>Runtime\Linq\MinMax.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\SequenceEqual.cs">
-      <Link>Runtime\Linq\SequenceEqual.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\SkipUntilCanceled.cs">
-      <Link>Runtime\Linq\SkipUntilCanceled.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Join.cs">
-      <Link>Runtime\Linq\Join.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\UnityExtensions\EveryUpdate.cs">
-      <Link>Runtime\Linq\UnityExtensions\EveryUpdate.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Cast.cs">
-      <Link>Runtime\Linq\Cast.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Merge.cs">
-      <Link>Runtime\Linq\Merge.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\UnityExtensions\Timer.cs">
-      <Link>Runtime\Linq\UnityExtensions\Timer.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Except.cs">
-      <Link>Runtime\Linq\Except.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Average.cs">
-      <Link>Runtime\Linq\Average.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ToLookup.cs">
-      <Link>Runtime\Linq\ToLookup.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Any.cs">
-      <Link>Runtime\Linq\Any.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Queue.cs">
-      <Link>Runtime\Linq\Queue.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Contains.cs">
-      <Link>Runtime\Linq\Contains.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Pairwise.cs">
-      <Link>Runtime\Linq\Pairwise.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Sum.cs">
-      <Link>Runtime\Linq\Sum.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\AsUniTaskAsyncEnumerable.cs">
-      <Link>Runtime\Linq\AsUniTaskAsyncEnumerable.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Range.cs">
-      <Link>Runtime\Linq\Range.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Do.cs">
-      <Link>Runtime\Linq\Do.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ToHashSet.cs">
-      <Link>Runtime\Linq\ToHashSet.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Never.cs">
-      <Link>Runtime\Linq\Never.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\LongCount.cs">
-      <Link>Runtime\Linq\LongCount.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\TakeLast.cs">
-      <Link>Runtime\Linq\TakeLast.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\SkipUntil.cs">
-      <Link>Runtime\Linq\SkipUntil.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Single.cs">
-      <Link>Runtime\Linq\Single.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\GroupBy.cs">
-      <Link>Runtime\Linq\GroupBy.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Take.cs">
-      <Link>Runtime\Linq\Take.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ToUniTaskAsyncEnumerable.cs">
-      <Link>Runtime\Linq\ToUniTaskAsyncEnumerable.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Repeat.cs">
-      <Link>Runtime\Linq\Repeat.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\SelectMany.cs">
-      <Link>Runtime\Linq\SelectMany.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\TakeUntilCanceled.cs">
-      <Link>Runtime\Linq\TakeUntilCanceled.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\UnityExtensions\EveryValueChanged.cs">
-      <Link>Runtime\Linq\UnityExtensions\EveryValueChanged.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Throw.cs">
-      <Link>Runtime\Linq\Throw.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\All.cs">
-      <Link>Runtime\Linq\All.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\GroupJoin.cs">
-      <Link>Runtime\Linq\GroupJoin.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\SkipLast.cs">
-      <Link>Runtime\Linq\SkipLast.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\CombineLatest.cs">
-      <Link>Runtime\Linq\CombineLatest.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Intersect.cs">
-      <Link>Runtime\Linq\Intersect.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Return.cs">
-      <Link>Runtime\Linq\Return.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ToList.cs">
-      <Link>Runtime\Linq\ToList.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\First.cs">
-      <Link>Runtime\Linq\First.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Distinct.cs">
-      <Link>Runtime\Linq\Distinct.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ToObservable.cs">
-      <Link>Runtime\Linq\ToObservable.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Publish.cs">
-      <Link>Runtime\Linq\Publish.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\DefaultIfEmpty.cs">
-      <Link>Runtime\Linq\DefaultIfEmpty.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Zip.cs">
-      <Link>Runtime\Linq\Zip.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Empty.cs">
-      <Link>Runtime\Linq\Empty.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Reverse.cs">
-      <Link>Runtime\Linq\Reverse.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Max.cs">
-      <Link>Runtime\Linq\Max.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Union.cs">
-      <Link>Runtime\Linq\Union.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Last.cs">
-      <Link>Runtime\Linq\Last.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\TakeUntil.cs">
-      <Link>Runtime\Linq\TakeUntil.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Buffer.cs">
-      <Link>Runtime\Linq\Buffer.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Min.cs">
-      <Link>Runtime\Linq\Min.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Subscribe.cs">
-      <Link>Runtime\Linq\Subscribe.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ForEach.cs">
-      <Link>Runtime\Linq\ForEach.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Select.cs">
-      <Link>Runtime\Linq\Select.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ToDictionary.cs">
-      <Link>Runtime\Linq\ToDictionary.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\OrderBy.cs">
-      <Link>Runtime\Linq\OrderBy.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ElementAt.cs">
-      <Link>Runtime\Linq\ElementAt.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\AppendPrepend.cs">
-      <Link>Runtime\Linq\AppendPrepend.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\ToArray.cs">
-      <Link>Runtime\Linq\ToArray.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Aggregate.cs">
-      <Link>Runtime\Linq\Aggregate.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\DistinctUntilChanged.cs">
-      <Link>Runtime\Linq\DistinctUntilChanged.cs</Link>
-    </Compile>
-    <Compile Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\Count.cs">
-      <Link>Runtime\Linq\Count.cs</Link>
-    </Compile>
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\TakeLast.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\UnityExtensions\EveryUpdate.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Zip.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\AsyncEnumeratorBase.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Cast.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ToArray.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ToDictionary.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Skip.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\SkipUntilCanceled.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Distinct.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\GroupBy.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Average.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Buffer.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ToObservable.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\SequenceEqual.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\TakeWhile.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Throw.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\LongCount.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Pairwise.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Repeat.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Max.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Count.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\GroupJoin.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Where.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\CombineLatest.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\TakeUntilCanceled.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\SkipWhile.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Subscribe.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Create.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\UnityExtensions\Timer.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Aggregate.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\MinMax.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Empty.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Last.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Concat.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Union.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\UnityExtensions\EveryValueChanged.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Intersect.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\SelectMany.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\SkipLast.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ToHashSet.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Single.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\DistinctUntilChanged.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\DefaultIfEmpty.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\OrderBy.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Merge.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ToUniTaskAsyncEnumerable.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Take.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ElementAt.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Do.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Select.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ForEach.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Sum.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\AsUniTaskAsyncEnumerable.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\SkipUntil.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Reverse.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Range.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Contains.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Min.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\AppendPrepend.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Queue.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Never.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\First.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Join.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\All.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Any.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Except.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Return.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ToLookup.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\TakeUntil.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\OfType.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\ToList.cs" />
+    <Compile Include="Assets\Plugins\UniTask\Runtime\Linq\Publish.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\GitHub\UnityPackages\UniTask\src\UniTask\Assets\Plugins\UniTask\Runtime\Linq\UniTask.Linq.asmdef">
-      <Link>Runtime\Linq\UniTask.Linq.asmdef</Link>
-    </None>
+    <None Include="Assets\Plugins\UniTask\Runtime\Linq\UniTask.Linq.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
