@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanelAnimation : MonoBehaviour
+public class PanelAnimation : MonoBehaviour, ICanvasAnimation
 {
     CanvasGroup localCanvasGroup;
     RectTransform rectTransform;
@@ -13,6 +13,7 @@ public class PanelAnimation : MonoBehaviour
     public int UntilFrames = 240;
     public float StartDeltaX = 0;
     public float StartDeltaY = 0;
+
     public bool EnableShowTriger = false;
     public bool EnableFadeTriger = false;
 
@@ -21,9 +22,10 @@ public class PanelAnimation : MonoBehaviour
         localCanvasGroup = GetComponent<CanvasGroup>();
         rectTransform = TransformPivot.GetComponent<RectTransform>();
         saveLocate = rectTransform.localPosition;
+        gameObject.SetActive(false);
     }
 
-    public void ShowPanel()
+    public void ShowAnimation()
     {
         gameObject.SetActive(true);
         rectTransform.localPosition = new Vector3(
@@ -32,32 +34,31 @@ public class PanelAnimation : MonoBehaviour
             saveLocate.z
         );
         localCanvasGroup.alpha = 0;
-        StartCoroutine(ShowAnimate());
+        StartCoroutine(Show());
     }
 
-    public void FadePanel()
+    public void HideAnimation()
     {
-        gameObject.SetActive(true);
         rectTransform.localPosition = saveLocate;
         localCanvasGroup.alpha = 1;
-        StartCoroutine(FadeAnimate());
+        StartCoroutine(Hide());
     }
 
     private void Update()
     {
         if (EnableShowTriger)
         {
-            ShowPanel();
+            ShowAnimation();
             EnableShowTriger = false;
         }
         if (EnableFadeTriger)
         {
-            FadePanel();
+            HideAnimation();
             EnableFadeTriger = false;
         }
     }
 
-    IEnumerator ShowAnimate()
+    public IEnumerator Show()
     {
         for (int i = 0; i < UntilFrames; i++)
         {
@@ -69,10 +70,9 @@ public class PanelAnimation : MonoBehaviour
             );
             yield return null;
         }
-        yield return null;
     }
 
-    IEnumerator FadeAnimate()
+    public IEnumerator Hide()
     {
         for (int i = 0; i < UntilFrames; i++)
         {
@@ -84,6 +84,7 @@ public class PanelAnimation : MonoBehaviour
             );
             yield return null;
         }
+        gameObject.SetActive(false);
         yield return null;
     }
 }

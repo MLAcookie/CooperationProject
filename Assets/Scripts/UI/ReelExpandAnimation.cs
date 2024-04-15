@@ -1,29 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReelExpandAnimation : MonoBehaviour
+public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
 {
     public GameObject Background;
     public GameObject L;
     public GameObject R;
     public AnimationCurve Curve;
     public int UntilFrames = 240;
-    public bool EnableTrigger = false;
+    public bool EnterTrigger = false;
+    public bool LeaveTriggrt = false;
 
     RectMask2D rectMask2D;
     Rect backgroundSize;
     Vector3 lTransform;
     Vector3 rTransform;
     float dis;
+    CanvasGroup localCanvasGroup;
 
-    public void ShowReel()
+    public void ShowAnimation()
     {
+        gameObject.SetActive(true);
+        localCanvasGroup.alpha = 0f;
         L.transform.localPosition = lTransform;
         R.transform.localPosition = rTransform;
-        rectMask2D.padding = new Vector4(dis, 0, dis, 0);
-        StartCoroutine(ExpandAnimation());
+        StartCoroutine(Show());
+    }
+
+    public void HideAnimation()
+    {
+        localCanvasGroup.alpha = 1f;
+        L.transform.localPosition = lTransform;
+        R.transform.localPosition = rTransform;
+        StartCoroutine(Hide());
     }
 
     private void Awake()
@@ -33,40 +45,75 @@ public class ReelExpandAnimation : MonoBehaviour
         lTransform = L.transform.localPosition;
         rTransform = R.transform.localPosition;
         dis = backgroundSize.width / 2;
+        localCanvasGroup = GetComponent<CanvasGroup>();
+        gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (EnableTrigger)
+        if (EnterTrigger)
         {
-            ShowReel();
-            EnableTrigger = false;
+            ShowAnimation();
+            EnterTrigger = false;
+        }
+        if (LeaveTriggrt)
+        {
+            HideAnimation();
+            LeaveTriggrt = false;
         }
     }
 
-    IEnumerator ExpandAnimation()
+    public IEnumerator Show()
     {
-        L.transform.localPosition = new Vector3(lTransform.x + dis, lTransform.y, lTransform.z);
-        R.transform.localPosition = new Vector3(rTransform.x - dis, rTransform.y, rTransform.z);
-        for (int i = 0; i < UntilFrames; i++)
+        rectMask2D.padding = new Vector4(dis, 0, dis, 0);
+        for (float i = 0; i <= UntilFrames; i++)
         {
+            localCanvasGroup.alpha += 1f / UntilFrames;
             L.transform.localPosition = new Vector3(
-                L.transform.localPosition.x - dis / UntilFrames,
-                L.transform.localPosition.y,
-                L.transform.localPosition.z
+                lTransform.x + dis * Curve.Evaluate(1.0f - i / UntilFrames),
+                lTransform.y,
+                lTransform.z
             );
             R.transform.localPosition = new Vector3(
-                R.transform.localPosition.x + dis / UntilFrames,
-                R.transform.localPosition.y,
-                R.transform.localPosition.z
+                rTransform.x - dis * Curve.Evaluate(1.0f - i / UntilFrames),
+                rTransform.y,
+                rTransform.z
             );
             rectMask2D.padding = new Vector4(
-                rectMask2D.padding.x - dis / UntilFrames,
+                dis * Curve.Evaluate(1.0f - i / UntilFrames),
                 0,
-                rectMask2D.padding.z - dis / UntilFrames,
+                dis * Curve.Evaluate(1.0f - i / UntilFrames),
                 0
             );
             yield return null;
         }
+    }
+
+    public IEnumerator Hide()
+    {
+        rectMask2D.padding = new Vector4(0, 0, 0, 0);
+        for (float i = 0; i <= UntilFrames; i++)
+        {
+            localCanvasGroup.alpha = 1f - Curve.Evaluate(i / UntilFrames);
+            L.transform.localPosition = new Vector3(
+                lTransform.x + dis * Curve.Evaluate(i / UntilFrames),
+                lTransform.y,
+                lTransform.z
+            );
+            R.transform.localPosition = new Vector3(
+                rTransform.x - dis * Curve.Evaluate(i / UntilFrames),
+                rTransform.y,
+                rTransform.z
+            );
+            rectMask2D.padding = new Vector4(
+                dis * Curve.Evaluate(i / UntilFrames),
+                0,
+                dis * Curve.Evaluate(i / UntilFrames),
+                0
+            );
+            yield return null;
+        }
+        gameObject.SetActive(false);
+        yield return null;
     }
 }

@@ -18,11 +18,11 @@ public class ClickToShow : MonoBehaviour
     {
         if (isOpenedPanel)
         {
-            ShowObject.GetComponent<PanelAnimation>().FadePanel();
+            ShowObject.GetComponent<ICanvasAnimation>().HideAnimation();
         }
         else
         {
-            ShowObject.GetComponent<PanelAnimation>().ShowPanel();
+            ShowObject.GetComponent<ICanvasAnimation>().ShowAnimation();
         }
         isOpenedPanel = !isOpenedPanel;
     }

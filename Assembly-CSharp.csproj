@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\WaterCupGame\WaterCup.cs" />
     <Compile Include="Assets\Scripts\FieldGame\FieldGameEvent.cs" />
     <Compile Include="Assets\Scripts\FieldGame\FieldLevelManager.cs" />
+    <Compile Include="Assets\Scripts\UI\ICanvasAnimation.cs" />
     <Compile Include="Assets\Scripts\WaterCupGame\ReservesCount.cs" />
     <Compile Include="Assets\Scripts\CutCircleGame\Resourses.cs" />
     <Compile Include="Assets\Scripts\UI\PersonUI.cs" />
