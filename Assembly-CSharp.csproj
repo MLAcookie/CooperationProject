@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\2DCameraController.cs" />
     <Compile Include="Assets\Scripts\MapCamera.cs" />
     <Compile Include="Assets\Scripts\WaterCupGame\CupTestTrigger.cs" />
+    <Compile Include="Assets\Scripts\UI\ReelExpandAnimation.cs" />
     <Compile Include="Assets\Scripts\CutCircleGame\Graphic.cs" />
     <Compile Include="Assets\Scripts\DialogScene\DialogSettingPipeline.cs" />
     <Compile Include="Assets\Scripts\WaterCupGame\WaterCup.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\WaterCupGame\ReservesCount.cs" />
     <Compile Include="Assets\Scripts\CutCircleGame\Resourses.cs" />
     <Compile Include="Assets\Scripts\UI\PersonUI.cs" />
+    <Compile Include="Assets\Scripts\UI\ClickToShow.cs" />
     <Compile Include="Assets\Scripts\FieldGame\Field.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\TextParser.cs" />
     <Compile Include="Assets\Scripts\UI\SettingButton.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\Scripts\CutCircleGame\NumText.cs" />
     <Compile Include="Assets\Scripts\MapScene\ButtonClickJumpToScene.cs" />
     <Compile Include="Assets\Scripts\UI\StartScene.cs" />
+    <Compile Include="Assets\Scripts\UI\PanelAnimation.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\OnObjectClicked.cs" />
     <Compile Include="Assets\Scripts\FieldGame\CutLine.cs" />
@@ -967,12 +970,12 @@
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
@@ -1007,16 +1010,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
@@ -1137,14 +1140,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UniTask.TextMeshPro.csproj">
-      <Project>{FEBFF68C-345E-406B-B9A4-4D9FA2D30FAD}</Project>
-      <Name>UniTask.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.DOTween.csproj">
-      <Project>{242EF5BB-40F4-8647-E0F3-9E6B8FDFDF2B}</Project>
-      <Name>UniTask.DOTween</Name>
-    </ProjectReference>
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{EA7BB70D-96C4-2FA9-9330-5A0DD6620DEC}</Project>
       <Name>UniTask.Addressables</Name>
@@ -1156,6 +1151,14 @@
     <ProjectReference Include="UniTask.csproj">
       <Project>{031FDF43-46CA-909E-150C-33510E7B0247}</Project>
       <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{FEBFF68C-345E-406B-B9A4-4D9FA2D30FAD}</Project>
+      <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{242EF5BB-40F4-8647-E0F3-9E6B8FDFDF2B}</Project>
+      <Name>UniTask.DOTween</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
