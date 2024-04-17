@@ -68,7 +68,10 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
         rectMask2D.padding = new Vector4(dis, 0, dis, 0);
         for (float i = 0; i <= UntilFrames; i++)
         {
-            localCanvasGroup.alpha += 1f / UntilFrames;
+            if (i <= .8f * UntilFrames)
+            {
+                localCanvasGroup.alpha = Curve.Evaluate(i / (.8f * UntilFrames));
+            }
             L.transform.localPosition = new Vector3(
                 lTransform.x + dis * Curve.Evaluate(1.0f - i / UntilFrames),
                 lTransform.y,
@@ -94,7 +97,7 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
         rectMask2D.padding = new Vector4(0, 0, 0, 0);
         for (float i = 0; i <= UntilFrames; i++)
         {
-            localCanvasGroup.alpha = 1f - Curve.Evaluate(i / UntilFrames);
+            localCanvasGroup.alpha = 1f - Curve.Evaluate(i /  UntilFrames);
             L.transform.localPosition = new Vector3(
                 lTransform.x + dis * Curve.Evaluate(i / UntilFrames),
                 lTransform.y,
@@ -115,5 +118,10 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
         }
         gameObject.SetActive(false);
         yield return null;
+    }
+
+    public void SetParameter<T>(T value)
+    {
+        throw new System.NotImplementedException();
     }
 }

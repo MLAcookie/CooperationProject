@@ -8,7 +8,7 @@ public class CameraDrag : MonoBehaviour
     public GameObject Map;
 
     private Transform mapTransform;
-    private Sprite mapSprite;
+    private SpriteRenderer mapSpriteRenderer;
 
     private Camera thisCamera;
 
@@ -28,19 +28,18 @@ public class CameraDrag : MonoBehaviour
         first.y = transform.position.y;
 
         mapTransform = Map.GetComponent<Transform>();
-        mapSprite = mapTransform.GetComponent<SpriteRenderer>().sprite;
+        mapSpriteRenderer = mapTransform.GetComponent<SpriteRenderer>();
 
         thisCamera = GetComponent<Camera>();
 
         offset = new Vector2(
-            Mathf.Abs(mapSprite.vertices[0].x)
+            Mathf.Abs(mapSpriteRenderer.bounds.size.x) / 2
                 - thisCamera.orthographicSize * Screen.width / Screen.height,
-            Mathf.Abs(mapSprite.vertices[0].y) - thisCamera.orthographicSize
+            Mathf.Abs(mapSpriteRenderer.bounds.size.y) / 2 - thisCamera.orthographicSize
         );
 
         from = new Vector2(mapTransform.position.x - offset.x, mapTransform.position.y - offset.y);
         to = new Vector2(mapTransform.position.x + offset.x, mapTransform.position.y + offset.y);
-
     }
 
     private void OnGUI()

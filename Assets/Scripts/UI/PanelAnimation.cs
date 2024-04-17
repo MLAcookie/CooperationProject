@@ -87,4 +87,9 @@ public class PanelAnimation : MonoBehaviour, ICanvasAnimation
         gameObject.SetActive(false);
         yield return null;
     }
+
+    public void SetParameter<T>(T value)
+    {
+        throw new System.NotImplementedException();
+    }
 }

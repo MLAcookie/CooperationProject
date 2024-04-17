@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\WaterCupGame\ReservesCount.cs" />
     <Compile Include="Assets\Scripts\CutCircleGame\Resourses.cs" />
     <Compile Include="Assets\Scripts\UI\PersonUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MapButtonExpandAnimation.cs" />
     <Compile Include="Assets\Scripts\UI\ClickToShow.cs" />
     <Compile Include="Assets\Scripts\FieldGame\Field.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\TextParser.cs" />
