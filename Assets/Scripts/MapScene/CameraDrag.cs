@@ -22,7 +22,7 @@ public class CameraDrag : MonoBehaviour
     private bool IsNeedMove = false; //是否需要移动
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         first.x = transform.position.x; //初始化
         first.y = transform.position.y;

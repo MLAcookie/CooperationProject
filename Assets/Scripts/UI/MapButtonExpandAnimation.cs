@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MapButtonExpandAnimation : MonoBehaviour, ICanvasAnimation
+public class MapButtonExpandAnimation
+    : MonoBehaviour,
+        ICanvasAnimation,
+        IPointerExitHandler,
+        IPointerEnterHandler
 {
     public GameObject Background;
     public GameObject L;
@@ -13,15 +19,17 @@ public class MapButtonExpandAnimation : MonoBehaviour, ICanvasAnimation
     public int UntilFrames = 240;
     public bool EnterTrigger = false;
     public bool LeaveTriggrt = false;
-    public GameObject TextBox;
+    public TextMeshProUGUI TextBox;
+    public Button ButtonA;
+    public Button ButtonB;
 
     RectMask2D rectMask2D;
     Rect backgroundSize;
     Vector3 lTransform;
     Vector3 rTransform;
     float dis;
-    string title;
     CanvasGroup localCanvasGroup;
+    bool isPointInside = false;
 
     public void ShowAnimation()
     {
@@ -62,6 +70,13 @@ public class MapButtonExpandAnimation : MonoBehaviour, ICanvasAnimation
         {
             HideAnimation();
             LeaveTriggrt = false;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!isPointInside)
+            {
+                HideAnimation();
+            }
         }
     }
 
@@ -124,10 +139,32 @@ public class MapButtonExpandAnimation : MonoBehaviour, ICanvasAnimation
 
     public void SetParameter<T>(T value)
     {
-        if (value is string)
+        if (value is List<string> list)
         {
-            title = (value as string);
-            TextBox.GetComponent<TextMeshProUGUI>().text = title;
+            TextBox.GetComponent<TextMeshProUGUI>().text = list[0];
+            if (list[1] != "")
+            {
+                ButtonA.onClick.AddListener(() => JumpScene(list[1]));
+            }
+            if (list[2] != "")
+            {
+                ButtonA.onClick.AddListener(() => JumpScene(list[2]));
+            }
         }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isPointInside = false;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isPointInside = true;
+    }
+
+    void JumpScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

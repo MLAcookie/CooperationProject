@@ -42,7 +42,7 @@ public class DialogBoxManager : MonoBehaviour
         //speakers = new Dictionary<string, string>();
         speakers[pos] = name;
         //speakers.Add(pos, name);
-        Sprite TempSprite = (Sprite)Resources.Load("FG/" + fgPath, typeof(Sprite));
+        Sprite TempSprite = (Sprite)Resources.Load(fgPath, typeof(Sprite));
         GameObject character = CharaPosition[pos];
         character.GetComponent<Image>().sprite = TempSprite;
         character.GetComponent<Image>().color = new Color(1, 1, 1, 1);
@@ -75,8 +75,7 @@ public class DialogBoxManager : MonoBehaviour
 
     public void LoadCharacter(string pos, string path)
     {
-        Sprite TempSprite = (Sprite)
-            Resources.Load("FG/" + speakers[pos] + '/' + path, typeof(Sprite));
+        Sprite TempSprite = (Sprite)Resources.Load(path, typeof(Sprite));
         GameObject character = CharaPosition[pos];
         //initialize sprite
         character.GetComponent<Image>().sprite = TempSprite;
@@ -136,12 +135,12 @@ public class DialogBoxManager : MonoBehaviour
 
     public void DisplayDialogue(string text)
     {
-        StopCoroutine("ShowDialogueCoroutine");
+        StopCoroutine(nameof(ShowDialogueCoroutine));
         this.CorText = text;
-        StartCoroutine("ShowDialogueCoroutine");
+        StartCoroutine(nameof(ShowDialogueCoroutine));
     }
 
-    public void OpenDiglogBox(string filename, int index)
+    public void OpenDiglogBox(string filename, int index = 0)
     {
         DialogueBoxPanel.SetActive(true);
         TextParser.instance.GetText(filename, index);

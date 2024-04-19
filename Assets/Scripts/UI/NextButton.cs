@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks.CompilerServices;
 using UnityEngine;
 
 public class NextButton : MonoBehaviour
 {
+    public static event Action OnDialogClose;
     public void OnButtonClick()
     {
         if (DialogBoxManager.instance.ShowTalkText == true)
@@ -17,11 +20,12 @@ public class NextButton : MonoBehaviour
             if (TextParser.instance.LineIndex >= TextParser.instance.TextLines.Length)
             {
                 DialogBoxManager.instance.CloseDiglogBox();
+                OnDialogClose();
+                OnDialogClose = null;
             }
             else
             {
                 TextParser.instance.ParsingText(TextParser.instance.LineIndex);
-
             }
         }
     }

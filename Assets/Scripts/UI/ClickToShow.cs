@@ -7,9 +7,8 @@ public class ClickToShow : MonoBehaviour
 {
     public GameObject ShowObject;
     public bool IsNeedParameter = false;
-    public string Parameter;
+    public List<string> Parameter;
 
-    bool isOpenedPanel = false;
     ICanvasAnimation canvasAnimation;
 
     private void Awake()
@@ -25,7 +24,7 @@ public class ClickToShow : MonoBehaviour
 
     private void OnClick()
     {
-        if (isOpenedPanel)
+        if (ShowObject.activeSelf)
         {
             ShowObject.GetComponent<ICanvasAnimation>().HideAnimation();
         }
@@ -33,6 +32,5 @@ public class ClickToShow : MonoBehaviour
         {
             ShowObject.GetComponent<ICanvasAnimation>().ShowAnimation();
         }
-        isOpenedPanel = !isOpenedPanel;
     }
 }

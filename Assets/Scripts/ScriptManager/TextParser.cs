@@ -12,6 +12,7 @@ public class TextParser : MonoBehaviour
     public int LineIndex;
 
     private bool SwitchMode = false;
+
     private void Awake()
     {
         instance = this;
@@ -24,7 +25,7 @@ public class TextParser : MonoBehaviour
         this.LineIndex = index;
         TextLines = FileHandler.instance.ReadTxtFile(TextFileName + ".txt");
         //Get the Text
-        ParsingText(LineIndex);//start parsing the first line
+        ParsingText(LineIndex); //start parsing the first line
     }
 
     public void ParsingText(int index)
@@ -34,13 +35,13 @@ public class TextParser : MonoBehaviour
             return;
         }
         TempScript = TextLines[index].Split('|');
-        // *| ×¢ÊÍÖ¸Áî
+        // *| ×¢ï¿½ï¿½Ö¸ï¿½ï¿½
         if (TempScript[0] == "*")
         {
             LineIndex++;
             ParsingText(LineIndex);
         }
-        // C| ÃüÁîÖ¸Áî
+        // C| ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
         else if (TempScript[0] == "C")
         {
             if (TempScript[1] == "setbg")
@@ -53,9 +54,9 @@ public class TextParser : MonoBehaviour
             {
                 {
                     if (TempScript[2] != "null")
-                    {                                          
+                    {
                         Debug.Log("setfg");
-                        DialogBoxManager.instance.LoadCharacter(TempScript[2] , TempScript[3]);
+                        DialogBoxManager.instance.LoadCharacter(TempScript[2], TempScript[3]);
                         DialogBoxManager.instance.CharacterDisplay(TempScript[2], "on");
                     }
                 }
@@ -72,7 +73,7 @@ public class TextParser : MonoBehaviour
             {
                 //(stop BGM Method)
             }
-            else if (TempScript[1] == "openswitch") 
+            else if (TempScript[1] == "openswitch")
             {
                 SwitchMode = true;
             }
@@ -82,15 +83,16 @@ public class TextParser : MonoBehaviour
             }
             else if (TempScript[1] == "add")
             {
-                DialogBoxManager.instance.AddSpeaker(TempScript[2], TempScript[3], TempScript[3] + "/" + TempScript[4]);
+                DialogBoxManager.instance.AddSpeaker(TempScript[2], TempScript[3], TempScript[4]);
             }
             LineIndex++;
             ParsingText(LineIndex);
         }
-        else if(TempScript[0] == "S")
+        else if (TempScript[0] == "S")
         {
             DialogBoxManager.instance.UpdateSpeakerName(TempScript[1]);
-            if(SwitchMode) DialogBoxManager.instance.SwitchSpeaker(TempScript[1]);
+            if (SwitchMode)
+                DialogBoxManager.instance.SwitchSpeaker(TempScript[1]);
             DialogBoxManager.instance.DisplayDialogue(TempScript[2]);
             LineIndex++;
             return;
