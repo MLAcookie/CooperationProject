@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\UI\NextButton.cs" />
     <Compile Include="Assets\Scripts\CutCircleGame\CircleTestTrigger.cs" />
     <Compile Include="Assets\Scripts\MapScene\ButonClickTest.cs" />
+    <Compile Include="Assets\Scripts\UI\Fade.cs" />
     <Compile Include="Assets\Scripts\FieldGame\pen.cs" />
     <Compile Include="Assets\Scripts\WaterCupGame\WaterCupManager.cs" />
     <Compile Include="Assets\Scripts\ScriptManager\GameArchive.cs" />
