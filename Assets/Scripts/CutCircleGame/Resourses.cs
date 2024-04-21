@@ -24,15 +24,15 @@ public class Resourses: MonoBehaviour
         {
             Destroy(gameObject);
         }
-        pai.Add(1.299038f);
-        pai.Add(2.598076f);
-        pai.Add(3.105828f);
-        pai.Add(3.132628f);
-        pai.Add(3.139350f);
-        pai.Add(3.141031f);
-        pai.Add(3.141452f);
-        pai.Add(3.141557f);
-        pai.Add(3.141583f);
+        pai.Add(1.2990f);
+        pai.Add(2.5980f);
+        pai.Add(3.1058f);
+        pai.Add(3.1326f);
+        pai.Add(3.1393f);
+        pai.Add(3.1410f);
+        pai.Add(3.1416f);
+        pai.Add(3.1415f);
+        pai.Add(3.1415f);
         pai.Add(3.141590f);
         pai.Add(3.141592f);
 

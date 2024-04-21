@@ -22,6 +22,7 @@ public class SkipButtonToMap : MonoBehaviour
     void OnClick()
     {
         VideoPlayer.Stop();
+        VideoPlayer.targetTexture.Release();
         gameObject.SetActive(false);
         Animation.GetComponent<CloudAnimation>().ShowAnimation();
     }

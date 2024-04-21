@@ -5,5 +5,4 @@ using UnityEngine;
 public class SceneParaHelper : MonoBehaviour
 {
     public static int StageIndex;
-    
 }

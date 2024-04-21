@@ -10,15 +10,19 @@ public class UnlockBook : MonoBehaviour
 
     private void Awake()
     {
-        if (!StageCount.IsStageAComplete || !StageCount.IsStageBComplete)
-        {
-            GetComponent<Button>().interactable = false;
-            GetComponent<Image>().sprite = Lock;
-        }
-        else
+        if (
+            StageCount.IsStageAComplete
+            && StageCount.IsStageBComplete
+            && StageCount.IsStageCComplete
+        )
         {
             GetComponent<Button>().interactable = true;
             GetComponent<Image>().sprite = Unlock;
+        }
+        else
+        {
+            GetComponent<Button>().interactable = false;
+            GetComponent<Image>().sprite = Lock;
         }
     }
 }

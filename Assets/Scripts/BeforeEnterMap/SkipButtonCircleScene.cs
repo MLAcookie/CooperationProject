@@ -9,7 +9,7 @@ public class SkipButtonCircleScene : MonoBehaviour
 {
     public VideoPlayer VideoPlayer;
     public RawImage RawImage;
-    public GameObject CircleTriggrer;
+    public GameObject CircleTrigger;
     Button localButton;
 
     private void Awake()
@@ -22,9 +22,10 @@ public class SkipButtonCircleScene : MonoBehaviour
     void OnClick()
     {
         VideoPlayer.Stop();
+        VideoPlayer.targetTexture.Release();
         RawImage.texture = null;
         RawImage.color = new Color(0, 0, 0, 0);
         gameObject.SetActive(false);
-        CircleTriggrer.GetComponent<CircleTestTrigger>().GamsStartActive = true;
+        CircleTrigger.GetComponent<CircleTestTrigger>().GamsStartActive = true;
     }
 }

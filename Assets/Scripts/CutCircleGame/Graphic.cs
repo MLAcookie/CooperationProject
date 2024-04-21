@@ -32,6 +32,7 @@ public class Graphic : MaskableGraphic
         get { return texture; }
     }
 
+
     protected override void Start()
     {
         if (stat == false)

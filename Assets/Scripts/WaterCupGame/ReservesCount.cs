@@ -29,11 +29,11 @@ public class ReservesCount : MonoBehaviour
         text.text = WaterCupInfo.reserves.ToString() + "/" + WaterCupInfo.maxReserves.ToString();
         if (WaterCupInfo.reserves == WaterCupInfo.maxReserves)
         {
-            text.color = Color.red;
+            text.color = new Color(.8f, 0, 0);
         }
         else
         {
-            text.color = Color.green;
+            text.color = new Color(0, .8f, 0);
         }
     }
 }

@@ -25,7 +25,7 @@ public class NextButton : MonoBehaviour
                 DialogBoxManager.instance.CloseDiglogBox();
                 DialogBoxManager.instance.LeftChara.GetComponent<Image>().sprite = trans;
                 DialogBoxManager.instance.RightChara.GetComponent<Image>().sprite = trans;
-                OnDialogClose();
+                OnDialogClose?.Invoke();
                 OnDialogClose = null;
             }
             else

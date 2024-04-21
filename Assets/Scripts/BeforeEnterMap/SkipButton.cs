@@ -15,8 +15,10 @@ public class SkipButton : MonoBehaviour
 
     private void Awake()
     {
+        
         localButton = GetComponent<Button>();
         localButton.onClick.AddListener(OnClick);
+        NextButton.OnDialogClose += () => Animation.GetComponent<CloudAnimation>().ShowAnimation();
     }
 
     void OnClick()
@@ -25,7 +27,6 @@ public class SkipButton : MonoBehaviour
         RawImage.texture = null;
         DialogBoxManager.instance.OpenDiglogBox("开场");
         NextButton.OnDialogClose += () => Debug.Log("test");
-        NextButton.OnDialogClose += () => Animation.GetComponent<CloudAnimation>().ShowAnimation();
         RawImage.color = new Color(0, 0, 0, 0);
         gameObject.SetActive(false);
     }
