@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FieldLevelManager : MonoBehaviour
 {
-
     public List<bool> levelGoal = new List<bool>();
     public int level = 0;
 
     public GameObject startObject;
+    public GameObject Animation;
 
     void Start()
     {
@@ -18,10 +18,7 @@ public class FieldLevelManager : MonoBehaviour
         FieldGameEvent.instance.onLevelClear += Clear;
     }
 
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     void levelStart(int _level)
     {
@@ -39,6 +36,9 @@ public class FieldLevelManager : MonoBehaviour
             if (levelGoal.TrueForAll(value => value == true))
             {
                 FieldGameEvent.instance.gameFinish(level);
+                DialogBoxManager.instance.OpenDiglogBox("分田结束");
+                NextButton.OnDialogClose += () =>
+                    Animation.GetComponent<CloudAnimation>().ShowAnimation();
                 Debug.Log(level + "gameFinshed");
             }
         }
@@ -46,11 +46,9 @@ public class FieldLevelManager : MonoBehaviour
 
     void levelEnd(int _level)
     {
-        if (level == _level)
-        {
-
-        }
+        if (level == _level) { }
     }
+
     void Clear(int _level)
     {
         if (level == _level)

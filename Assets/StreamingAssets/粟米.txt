@@ -1,12 +1,14 @@
-C|add|left|窦大哥|Dialog/窦大哥
+C|add|left|窦大哥|Dialog/窦大哥04
 S|窦大哥|你分的不对！怎么给你自己那么多！
 C|openswitch
 C|add|right|良大哥|Dialog/良大哥01
 S|良大哥|分明是你的更多！再多给我一些，我可比你干活的时间长！
-C|setfg|left|Dialog/小刘04
+C|del|left
+C|add|left|小刘|Dialog/小刘04
 S|良大哥|来来来小伙子，你来看看这么分合适吗？
 S|小刘|确实不合适。
-C|setfg|right|Dialog/窦大哥
+C|del|right
+C|add|right|窦大哥|Dialog/窦大哥02
 S|窦大哥|你不是这些天来经常去学堂吗，来试着帮我们分一下吧！
 C|del|left
 C|del|right

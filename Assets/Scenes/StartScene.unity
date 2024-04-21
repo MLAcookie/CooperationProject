@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36ef89359ece824f99944b31ee55c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: MapScene
+  SceneName: Test
 --- !u!1 &954469025
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c25a3e5425250849b01fb56799ddfd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testbgm: {fileID: 8300000, guid: 09dd1b38bcaf1c3498ce8534f8460436, type: 3}
+  testbgm: {fileID: 8300000, guid: 6289c78f6ed9a804db32c146b08e8ca8, type: 3}
 --- !u!1 &1873138343
 GameObject:
   m_ObjectHideFlags: 0

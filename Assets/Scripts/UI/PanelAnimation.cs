@@ -68,7 +68,7 @@ public class PanelAnimation : MonoBehaviour, ICanvasAnimation
                 rectTransform.localPosition.y + StartDeltaY / UntilFrames,
                 rectTransform.localPosition.z
             );
-            yield return null;
+            yield return new WaitForSeconds(.01f);
         }
     }
 
@@ -82,10 +82,10 @@ public class PanelAnimation : MonoBehaviour, ICanvasAnimation
                 rectTransform.localPosition.y - StartDeltaY / UntilFrames,
                 rectTransform.localPosition.z
             );
-            yield return null;
+            yield return new WaitForSeconds(.01f);
         }
         gameObject.SetActive(false);
-        yield return null;
+        yield return new WaitForSeconds(.01f);
     }
 
     public void SetParameter<T>(T value)

@@ -10,6 +10,7 @@ public class SkipButton : MonoBehaviour
 {
     public VideoPlayer VideoPlayer;
     public RawImage RawImage;
+    public GameObject Animation;
     Button localButton;
 
     private void Awake()
@@ -23,12 +24,9 @@ public class SkipButton : MonoBehaviour
         VideoPlayer.Stop();
         RawImage.texture = null;
         DialogBoxManager.instance.OpenDiglogBox("开场");
-        NextButton.OnDialogClose += () => ChangeScene();
+        NextButton.OnDialogClose += () => Debug.Log("test");
+        NextButton.OnDialogClose += () => Animation.GetComponent<CloudAnimation>().ShowAnimation();
+        RawImage.color = new Color(0, 0, 0, 0);
         gameObject.SetActive(false);
-    }
-
-    void ChangeScene()
-    {
-        SceneManager.LoadSceneAsync("Scenes/MapScene");
     }
 }

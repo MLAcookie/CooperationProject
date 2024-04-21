@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FieldScene.unity
     guid: d1dd1891835c9084b9144f0cb5070fec
+  - enabled: 1
+    path: Assets/Scenes/WaterScene.unity
+    guid: 9635f0ab8957a654b803c89973caf06a
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: d79e76f35b994a34b867cf3b3fb100a2
   m_configObjects: {}

@@ -9,7 +9,7 @@ public class Field : MonoBehaviour
     private Vector2 distance;
 
     public List<GameObject> endPos = new List<GameObject>();
-    //ÁíÒ»¸öÆ´Í¼µÄ×é×°½Úµã
+    //ï¿½ï¿½Ò»ï¿½ï¿½Æ´Í¼ï¿½ï¿½ï¿½ï¿½×°ï¿½Úµï¿½
     private List<Vector2> otherPartPos = new List<Vector2>();
 
 
@@ -40,7 +40,7 @@ public class Field : MonoBehaviour
     void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //ÊµÊ±»ñÈ¡×îÖÕ½ÚµãµÄÎ»ÖÃ
+        //ÊµÊ±ï¿½ï¿½È¡ï¿½ï¿½ï¿½Õ½Úµï¿½ï¿½Î»ï¿½ï¿½
 
         if (neID.Count != 0)
         {
@@ -49,7 +49,7 @@ public class Field : MonoBehaviour
                 FieldGameEvent.instance.findingPoint(neID[i]);
             }
         }
-        //Ñ°ÕÒ½Úµã
+        //Ñ°ï¿½Ò½Úµï¿½
 
         if (endPos.Count != 0)
         {
@@ -58,7 +58,7 @@ public class Field : MonoBehaviour
                 otherPartPos[i] = endPos[i].transform.position;
             }
         }
-        //»ñÈ¡×ø±ê
+        //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 
     }
 

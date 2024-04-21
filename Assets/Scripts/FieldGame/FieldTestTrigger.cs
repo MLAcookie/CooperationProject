@@ -9,10 +9,12 @@ public class FieldTestTrigger : MonoBehaviour
     public bool GamsFinishActive = false;
     public bool GamsClearActive = false;
 
-    void Start()
+    private void Awake()
     {
-        
+        level = SceneParaHelper.StageIndex;
     }
+
+    void Start() { }
 
     void Update()
     {

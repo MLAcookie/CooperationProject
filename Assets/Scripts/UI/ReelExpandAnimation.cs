@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
+public class ReelExpandAnimation
+    : MonoBehaviour,
+        ICanvasAnimation,
+        IPointerExitHandler,
+        IPointerEnterHandler
 {
     public GameObject Background;
     public GameObject L;
@@ -19,6 +24,7 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
     Vector3 lTransform;
     Vector3 rTransform;
     float dis;
+    bool isPointInside = false;
     CanvasGroup localCanvasGroup;
 
     public void ShowAnimation()
@@ -61,6 +67,13 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
             HideAnimation();
             LeaveTriggrt = false;
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!isPointInside)
+            {
+                HideAnimation();
+            }
+        }
     }
 
     public IEnumerator Show()
@@ -88,7 +101,7 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
                 dis * Curve.Evaluate(1.0f - i / UntilFrames),
                 0
             );
-            yield return null;
+            yield return new WaitForSeconds(.01f);
         }
     }
 
@@ -97,7 +110,7 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
         rectMask2D.padding = new Vector4(0, 0, 0, 0);
         for (float i = 0; i <= UntilFrames; i++)
         {
-            localCanvasGroup.alpha = 1f - Curve.Evaluate(i /  UntilFrames);
+            localCanvasGroup.alpha = 1f - Curve.Evaluate(i / UntilFrames);
             L.transform.localPosition = new Vector3(
                 lTransform.x + dis * Curve.Evaluate(i / UntilFrames),
                 lTransform.y,
@@ -114,10 +127,20 @@ public class ReelExpandAnimation : MonoBehaviour, ICanvasAnimation
                 dis * Curve.Evaluate(i / UntilFrames),
                 0
             );
-            yield return null;
+            yield return new WaitForSeconds(.01f);
         }
         gameObject.SetActive(false);
-        yield return null;
+        yield return new WaitForSeconds(.01f);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isPointInside = false;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isPointInside = true;
     }
 
     public void SetParameter<T>(T value)

@@ -62,18 +62,18 @@ public class pen : MonoBehaviour
         Vector3 point_pos = transform.position;
 
 
-        // »ñÈ¡Êó±êÎ»ÖÃ
+        // ï¿½ï¿½È¡ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         Vector3 mousePosition = Input.mousePosition;
 
-        // ½«Êó±êÎ»ÖÃ´ÓÆÁÄ»×ø±ê×ª»»ÎªÊÀ½ç×ø±ê
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã´ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, mainCamera.transform.position.y));
 
-        // ½«Êó±êÎ»ÖÃÏÞÖÆÔÚÉãÏñ»ú·¶Î§ÄÚ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½
         worldPosition.x = Mathf.Clamp(worldPosition.x, mainCamera.transform.position.x - mainCamera.orthographicSize * mainCamera.aspect, mainCamera.transform.position.x + mainCamera.orthographicSize * mainCamera.aspect);
         worldPosition.y = Mathf.Clamp(worldPosition.y, mainCamera.transform.position.y - mainCamera.orthographicSize, mainCamera.transform.position.y + mainCamera.orthographicSize);
         worldPosition.z = 0;
             
-        // ¸üÐÂÊó±êÎ»ÖÃ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         transform.position = worldPosition;
 
     }

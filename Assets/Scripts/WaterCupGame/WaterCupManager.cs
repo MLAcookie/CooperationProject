@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class WaterCupManager : MonoBehaviour
 {
-
     public List<bool> levelGoal = new List<bool>();
+    public GameObject Animation;
     public int level = 0;
 
     public struct waterInfoS
@@ -14,22 +14,23 @@ public class WaterCupManager : MonoBehaviour
         int max;
         int pres;
     }
-    
+
     private List<Vector2> initialPos = new List<Vector2>();
     private List<GameObject> cupPos = new List<GameObject>();
     private List<GameObject> reservesPos = new List<GameObject>();
-    
+
     public List<int> maxReservesS = new List<int>();
     public List<int> reservesS = new List<int>();
     public List<int> CupID = new List<int>();
     public List<int> goalReserves = new List<int>();
-    //ÄÔ×Ó²»×ªÁË£¬ÏÈËæ±ãÐ´¸ö´æ´¢Êý¾ÝµÄÓÃÀ´²âÊÔÒ»ÏÂ
+
+    //ï¿½ï¿½ï¿½Ó²ï¿½×ªï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
     public GameObject Canvas;
-    //ÄÔ×Ó²»×ªÁË
+
+    //ï¿½ï¿½ï¿½Ó²ï¿½×ªï¿½ï¿½
 
     public GameObject WaterCupPre;
     public GameObject reservesPre;
-
 
     void Awake()
     {
@@ -37,8 +38,6 @@ public class WaterCupManager : MonoBehaviour
         {
             initialPos.Add(gameObject.transform.GetChild(i).transform.position);
         }
-
-
     }
 
     private void Start()
@@ -62,10 +61,7 @@ public class WaterCupManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     private void addToCanvas(GameObject itself)
     {
@@ -82,18 +78,20 @@ public class WaterCupManager : MonoBehaviour
                 cupPos.Add(Instantiate(WaterCupPre));
                 cupPos[i].transform.position = initialPos[i];
 
-
                 cupPos[i].GetComponent<WaterCup>().maxReserves = maxReservesS[i];
                 cupPos[i].GetComponent<WaterCup>().reserves = reservesS[i];
                 cupPos[i].GetComponent<WaterCup>().ID = CupID[i];
                 cupPos[i].GetComponent<WaterCup>().goalReserves = goalReserves[i];
                 cupPos[i].GetComponent<WaterCup>().level = level;
-                //ÄÔ×Ó²»×ªÁË£¬ÏÈËæ±ãÐ´¸ö´æ´¢Êý¾ÝµÄÓÃÀ´²âÊÔÒ»ÏÂ
+                //ï¿½ï¿½ï¿½Ó²ï¿½×ªï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 
 
                 reservesPos.Add(Instantiate(reservesPre));
-                reservesPos[i].gameObject.GetComponent<ReservesCount>().WaterCupInfo = cupPos[i].GetComponent<WaterCup>();
-                reservesPos[i].gameObject.GetComponent<ReservesCount>().resrvesPos = cupPos[i].transform.GetChild(0).gameObject;
+                reservesPos[i].gameObject.GetComponent<ReservesCount>().WaterCupInfo = cupPos[i]
+                    .GetComponent<WaterCup>();
+                reservesPos[i].gameObject.GetComponent<ReservesCount>().resrvesPos = cupPos[i]
+                    .transform.GetChild(0)
+                    .gameObject;
             }
         }
     }
@@ -106,6 +104,7 @@ public class WaterCupManager : MonoBehaviour
             if (levelGoal.TrueForAll(value => value == true))
             {
                 WaterCupGameEvent.instance.gameFinish(level);
+                Animation.GetComponent<CloudAnimation>().ShowAnimation();
                 Debug.Log(level + "gameFinshed");
             }
         }
@@ -113,11 +112,9 @@ public class WaterCupManager : MonoBehaviour
 
     void levelEnd(int _level)
     {
-        if (level == _level)
-        {
-
-        }
+        if (level == _level) { }
     }
+
     void Clear(int _level)
     {
         if (level == _level)

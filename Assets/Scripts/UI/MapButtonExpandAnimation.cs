@@ -22,6 +22,7 @@ public class MapButtonExpandAnimation
     public TextMeshProUGUI TextBox;
     public Button ButtonA;
     public Button ButtonB;
+    public GameObject Manager;
 
     RectMask2D rectMask2D;
     Rect backgroundSize;
@@ -105,7 +106,7 @@ public class MapButtonExpandAnimation
                 dis * Curve.Evaluate(1.0f - i / UntilFrames),
                 0
             );
-            yield return null;
+            yield return new WaitForSeconds(.01f);
         }
     }
 
@@ -131,10 +132,10 @@ public class MapButtonExpandAnimation
                 dis * Curve.Evaluate(i / UntilFrames),
                 0
             );
-            yield return null;
+            yield return new WaitForSeconds(.01f);
         }
         gameObject.SetActive(false);
-        yield return null;
+        yield return new WaitForSeconds(.01f);
     }
 
     public void SetParameter<T>(T value)
@@ -144,11 +145,17 @@ public class MapButtonExpandAnimation
             TextBox.GetComponent<TextMeshProUGUI>().text = list[0];
             if (list[1] != "")
             {
-                ButtonA.onClick.AddListener(() => JumpScene(list[1]));
+                ButtonA.onClick.AddListener(
+                    () =>
+                        Manager.GetComponent<SceneChangeManager>().ChangeSceneWithAnimation(list[1])
+                );
             }
             if (list[2] != "")
             {
-                ButtonA.onClick.AddListener(() => JumpScene(list[2]));
+                ButtonB.onClick.AddListener(
+                    () =>
+                        Manager.GetComponent<SceneChangeManager>().ChangeSceneWithAnimation(list[2])
+                );
             }
         }
     }

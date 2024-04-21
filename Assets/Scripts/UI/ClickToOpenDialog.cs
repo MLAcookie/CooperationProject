@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ClickToOpenDialog : MonoBehaviour
 {
     public string DialogName;
+    public int StageIndex;
 
     private void Awake()
     {
@@ -14,7 +15,22 @@ public class ClickToOpenDialog : MonoBehaviour
 
     void OnClick()
     {
-        DialogBoxManager.instance.OpenDiglogBox(DialogName);
+        if (DialogName != "")
+        {
+            DialogBoxManager.instance.OpenDiglogBox(DialogName);
+        }
         NextButton.OnDialogClose += () => GetComponent<ToShow>().Show();
+        switch (StageIndex)
+        {
+            case 0:
+                StageCount.IsStageAComplete = true;
+                break;
+            case 1:
+                StageCount.IsStageBComplete = true;
+                break;
+            case 2:
+                StageCount.IsStageCComplete = true;
+                break;
+        }
     }
 }
